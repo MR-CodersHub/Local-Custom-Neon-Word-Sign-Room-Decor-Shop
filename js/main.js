@@ -617,16 +617,62 @@ function initNeonPreview() {
 
 // ======= MOBILE MENU =======
 function initMobileMenu() {
-  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
   const toggler = document.querySelector('.navbar-toggler');
-  const collapse = document.querySelector('.navbar-collapse');
+  const collapseEl = document.querySelector('.navbar-collapse');
+  if (!toggler || !collapseEl) return;
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth < 992 && collapse && collapse.classList.contains('show')) {
-        if (toggler) toggler.click();
+  const getInstance = () => {
+    if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+      return bootstrap.Collapse.getOrCreateInstance(collapseEl, { toggle: false });
+    }
+    return null;
+  };
+
+  const isOpen = () => collapseEl.classList.contains('show');
+
+  const closeMenu = () => {
+    if (!isOpen()) return;
+    const inst = getInstance();
+    if (inst) {
+      inst.hide();
+    } else {
+      collapseEl.classList.remove('show');
+      toggler.setAttribute('aria-expanded', 'false');
+    }
+  };
+
+  // Close when any link/button inside the open menu is tapped
+  collapseEl.addEventListener('click', (e) => {
+    if (window.innerWidth < 992 && e.target.closest('a, button')) {
+      closeMenu();
+    }
+  });
+
+  // Close on outside tap
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth >= 992 || !isOpen()) return;
+    if (e.target.closest('.navbar')) return;
+    closeMenu();
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // Reset when resizing to desktop so the menu never gets stuck
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 992 && (isOpen() || collapseEl.classList.contains('collapsing'))) {
+      const inst = getInstance();
+      if (inst) {
+        try { inst.dispose(); } catch (err) { /* noop */ }
       }
-    });
+      collapseEl.classList.remove('show', 'collapsing', 'collapse');
+      collapseEl.removeAttribute('style');
+      // Re-add base class on next frame so desktop layout restores cleanly
+      requestAnimationFrame(() => collapseEl.classList.add('collapse'));
+      toggler.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 
@@ -634,7 +680,14 @@ function initMobileMenu() {
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      const target = document.querySelector(this.getAttribute('href'));
+      const id = this.getAttribute('href');
+      if (!id || id === '#') return;
+      let target = null;
+      try {
+        target = document.querySelector(id);
+      } catch (err) {
+        return;
+      }
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
