@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <meta name="description" content="Login or Register for a NeonLux account. Track orders, save designs, access exclusive member deals and manage your custom neon sign orders." />
+  <title>Login / Register | NeonLux Custom Neon Signs</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23FF2D78'/><stop offset='1' stop-color='%23B020FF'/></linearGradient></defs><rect width='64' height='64' rx='14' fill='url(%23g)'/><path d='M35 6 14 36h11l-2 22 21-30H33l2-22z' fill='white'/></svg>" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* No navbar on this page — remove the fixed-navbar body offset */
+    body { padding-top: 0 !important; }
+    .auth-tab-btn {
+      flex: 1;
+      padding: 14px 24px;
+      border: none;
+      background: transparent;
+      color: var(--t2);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
+    }
+    .auth-tab-btn.active {
+      color: var(--pink);
+      border-bottom-color: var(--pink);
+    }
+    .auth-panel { display: none; }
+    .auth-panel.active { display: block; animation: fadeInUp 0.4s ease; }
+    .strength-bar { height: 4px; border-radius: 2px; background: var(--glass-border); overflow: hidden; margin-top: 8px; }
+    .strength-fill { height: 100%; border-radius: 2px; transition: width 0.3s ease, background 0.3s ease; }
+    .password-toggle { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--t3); cursor: pointer; font-size: 1rem; }
+    .password-toggle:hover { color: var(--pink); }
+  </style>
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- Floating theme toggle (navbar removed on this page) -->
+<button class="theme-toggle" aria-label="Toggle theme" style="position:fixed;top:16px;right:16px;z-index:1000;box-shadow:0 4px 16px rgba(0,0,0,0.25);"><i class="bi bi-sun-fill"></i></button>
+
+<!-- AUTH PAGE -->
+<!-- AUTH PAGE -->
+<div class="auth-wrapper">
+  <!-- Left Panel — Background Visual -->
+  <div class="d-none d-lg-flex col-lg-6" style="position:fixed;left:0;top:0;height:100vh;overflow:hidden;">
+    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=1000&auto=format&fit=crop" alt="NeonLux neon sign" style="width:100%;height:100%;object-fit:cover;" />
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(255,45,120,0.7) 0%, rgba(5,5,15,0.85) 60%, rgba(5,5,15,0.95) 100%);"></div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:60px;z-index:2;">
+      <a href="index.html" class="footer-brand" style="font-size:2.5rem;text-decoration:none;margin-bottom:40px;"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">NeonLux</span></a>
+      <h2 style="font-size:2.2rem;font-weight:800;color:#fff;line-height:1.3;margin-bottom:16px;">
+        Your Neon<br>Journey Starts<br><span style="background:var(--g-neon);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradientShift 4s ease infinite;">Here</span>
+      </h2>
+      <p style="color:rgba(255,255,255,0.75);max-width:360px;line-height:1.7;margin-bottom:32px;">Create your account to track orders, save custom designs, get exclusive member deals and experience the full NeonLux universe.</p>
+      <!-- Member Benefits -->
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:32px;height:32px;border-radius:50%;background:rgba(255,45,120,0.2);border:1px solid rgba(255,45,120,0.4);display:flex;align-items:center;justify-content:center;font-size:0.9rem;">✓</div>
+          <span style="color:rgba(255,255,255,0.85);font-size:0.95rem;">Free digital proof on every order</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:32px;height:32px;border-radius:50%;background:rgba(0,212,255,0.2);border:1px solid rgba(0,212,255,0.4);display:flex;align-items:center;justify-content:center;font-size:0.9rem;">✓</div>
+          <span style="color:rgba(255,255,255,0.85);font-size:0.95rem;">Exclusive member-only discounts</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:32px;height:32px;border-radius:50%;background:rgba(57,255,20,0.2);border:1px solid rgba(57,255,20,0.4);display:flex;align-items:center;justify-content:center;font-size:0.9rem;">✓</div>
+          <span style="color:rgba(255,255,255,0.85);font-size:0.95rem;">Real-time order tracking</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:32px;height:32px;border-radius:50%;background:rgba(191,0,255,0.2);border:1px solid rgba(191,0,255,0.4);display:flex;align-items:center;justify-content:center;font-size:0.9rem;">✓</div>
+          <span style="color:rgba(255,255,255,0.85);font-size:0.95rem;">Save & revisit past designs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Panel — Auth Forms -->
+  <div class="col-12 col-lg-6 ms-lg-auto d-flex align-items-center justify-content-center" style="min-height:100vh;padding:40px 20px;">
+    <div style="width:100%;max-width:480px;" data-aos="fade-up">
+
+      <!-- Mobile Brand -->
+      <div class="text-center mb-4 d-lg-none">
+        <a href="index.html" class="navbar-brand" style="font-size:2rem;"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">Neon<span>Lux</span></span></a>
+      </div>
+
+      <div class="auth-card">
+        <!-- Tabs -->
+        <div style="display:flex;border-bottom:1px solid var(--glass-border);margin-bottom:32px;" data-tabs-container>
+          <button class="auth-tab-btn active" id="loginTabBtn" data-tab-target="login">Sign In</button>
+          <button class="auth-tab-btn" id="registerTabBtn" data-tab-target="register">Create Account</button>
+        </div>
+
+        <!-- LOGIN PANEL -->
+        <div class="auth-panel active" data-tab-panel="login" id="loginPanel">
+          <div class="auth-title">Welcome Back <i class="bi bi-lightning-charge" aria-hidden="true"></i></div>
+          <p style="color:var(--t2);font-size:0.9rem;margin-bottom:28px;">Sign in to your NeonLux account to track orders and manage designs.</p>
+
+          <!-- Social Login -->
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
+            <button class="social-auth-btn" id="googleLoginBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              Continue with Google
+            </button>
+            <button class="social-auth-btn" id="facebookLoginBtn">
+              <i class="bi bi-facebook" style="color:#1877f2;font-size:1.1rem;"></i>
+              Continue with Facebook
+            </button>
+          </div>
+
+          <div class="auth-divider"><span>or sign in with email</span></div>
+
+          <form data-validate id="loginForm">
+            <div class="form-group">
+              <label class="form-label" for="loginEmail">Email Address *</label>
+              <input type="email" class="form-control" id="loginEmail" placeholder="jane@example.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="loginPassword">Password *</label>
+              <div style="position:relative;">
+                <input type="password" class="form-control" id="loginPassword" placeholder="Your password" required style="padding-right:50px;" />
+                <button type="button" class="password-toggle" onclick="togglePassword('loginPassword', this)"><i class="bi bi-eye-fill"></i></button>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:0.9rem;color:var(--t2);">
+                <input type="checkbox" style="accent-color:var(--pink);" /> Remember me
+              </label>
+              <a href="#" style="font-size:0.9rem;color:var(--pink);font-weight:500;">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn-neon w-100 justify-content-center btn-neon-lg"><i class="bi bi-box-arrow-in-right"></i> Sign In</button>
+          </form>
+
+          <p style="text-align:center;margin-top:24px;font-size:0.9rem;color:var(--t2);">
+            New to NeonLux? <a href="#" id="switchToRegister" style="color:var(--pink);font-weight:600;">Create a free account</a>
+          </p>
+        </div>
+
+        <!-- REGISTER PANEL -->
+        <div class="auth-panel" data-tab-panel="register" id="registerPanel">
+          <div class="auth-title">Join NeonLux <i class="bi bi-stars" aria-hidden="true"></i></div>
+          <p style="color:var(--t2);font-size:0.9rem;margin-bottom:28px;">Create your free account and get a 10% welcome discount on your first order.</p>
+
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
+            <button class="social-auth-btn" id="googleRegisterBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              Continue with Google
+            </button>
+          </div>
+
+          <div class="auth-divider"><span>or register with email</span></div>
+
+          <form data-validate id="registerForm">
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="form-label" for="regFirstName">First Name *</label>
+                  <input type="text" class="form-control" id="regFirstName" placeholder="Jane" required />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="form-label" for="regLastName">Last Name *</label>
+                  <input type="text" class="form-control" id="regLastName" placeholder="Smith" required />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regEmail">Email Address *</label>
+              <input type="email" class="form-control" id="regEmail" placeholder="jane@example.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regPassword">Password *</label>
+              <div style="position:relative;">
+                <input type="password" class="form-control" id="regPassword" placeholder="Create a strong password" required style="padding-right:50px;" oninput="checkPasswordStrength(this.value)" />
+                <button type="button" class="password-toggle" onclick="togglePassword('regPassword', this)"><i class="bi bi-eye-fill"></i></button>
+              </div>
+              <!-- Password Strength -->
+              <div class="strength-bar mt-2">
+                <div class="strength-fill" id="strengthFill" style="width:0%;"></div>
+              </div>
+              <div id="strengthLabel" style="font-size:0.75rem;color:var(--t3);margin-top:4px;"></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="regConfirm">Confirm Password *</label>
+              <div style="position:relative;">
+                <input type="password" class="form-control" id="regConfirm" placeholder="Repeat your password" required style="padding-right:50px;" />
+                <button type="button" class="password-toggle" onclick="togglePassword('regConfirm', this)"><i class="bi bi-eye-fill"></i></button>
+              </div>
+            </div>
+            <div style="margin-bottom:20px;">
+              <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:0.88rem;color:var(--t2);">
+                <input type="checkbox" style="accent-color:var(--pink);margin-top:3px;flex-shrink:0;" required />
+                I agree to the <a href="#" style="color:var(--pink);">Terms of Service</a> and <a href="#" style="color:var(--pink);">Privacy Policy</a>
+              </label>
+            </div>
+            <div style="margin-bottom:24px;">
+              <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:0.88rem;color:var(--t2);">
+                <input type="checkbox" style="accent-color:var(--pink);flex-shrink:0;" />
+                Send me exclusive deals and neon inspiration (optional)
+              </label>
+            </div>
+            <button type="submit" class="btn-neon w-100 justify-content-center btn-neon-lg"><i class="bi bi-person-plus-fill"></i> Create My Account</button>
+            <!-- Welcome Offer -->
+            <div style="margin-top:16px;padding:14px 16px;background:rgba(57,255,20,0.08);border:1px solid rgba(57,255,20,0.25);border-radius:12px;display:flex;align-items:center;gap:10px;">
+              <i class="bi bi-gift-fill" style="color:var(--green);font-size:1.1rem;"></i>
+              <span style="font-size:0.85rem;color:var(--t2);">Get <strong style="color:var(--green);">10% OFF</strong> your first order when you sign up today!</span>
+            </div>
+          </form>
+
+          <p style="text-align:center;margin-top:24px;font-size:0.9rem;color:var(--t2);">
+            Already have an account? <a href="#" id="switchToLogin" style="color:var(--pink);font-weight:600;">Sign in here</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div style="text-align:center;margin-top:24px;">
+        <p style="font-size:0.85rem;color:var(--t3);">
+          <a href="index.html" style="color:var(--t3);">← Back to Home</a> &nbsp;|&nbsp;
+          <a href="contact.html" style="color:var(--t3);">Need Help?</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ once: true, duration: 700 });</script>
+<script src="js/main.js"></script>
+<script>
+  // Tab Switching
+  const loginPanel = document.getElementById('loginPanel');
+  const registerPanel = document.getElementById('registerPanel');
+  const loginTabBtn = document.getElementById('loginTabBtn');
+  const registerTabBtn = document.getElementById('registerTabBtn');
+
+  function showLogin() {
+    loginPanel.classList.add('active');
+    registerPanel.classList.remove('active');
+    loginTabBtn.classList.add('active');
+    registerTabBtn.classList.remove('active');
+  }
+
+  function showRegister() {
+    registerPanel.classList.add('active');
+    loginPanel.classList.remove('active');
+    registerTabBtn.classList.add('active');
+    loginTabBtn.classList.remove('active');
+  }
+
+  loginTabBtn.addEventListener('click', showLogin);
+  registerTabBtn.addEventListener('click', showRegister);
+  document.getElementById('switchToRegister')?.addEventListener('click', (e) => { e.preventDefault(); showRegister(); });
+  document.getElementById('switchToLogin')?.addEventListener('click', (e) => { e.preventDefault(); showLogin(); });
+
+  // Auth success → toast + redirect to home page.
+  // Runs before main.js validation (attached first), so on valid submit we
+  // stop the generic handler and redirect instead of showing its toast.
+  // Invalid submits fall through to main.js field-error display.
+  function authSuccess(message) {
+    if (typeof showToast === 'function') showToast(message);
+    setTimeout(() => { window.location.href = 'index.html'; }, 1400);
+  }
+
+  [['loginForm', 'Welcome back! Signing you in...'],
+   ['registerForm', 'Account created! Welcome to NeonLux...']
+  ].forEach(([formId, message]) => {
+    document.getElementById(formId)?.addEventListener('submit', function (e) {
+      if (this.checkValidity()) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        try { localStorage.setItem('neonAuth', '1'); } catch (err) {}
+        authSuccess(message);
+      }
+    });
+  });
+
+  // Social sign-in / sign-up (demo) → redirect home as well
+  [['googleLoginBtn', 'Google'], ['facebookLoginBtn', 'Facebook'], ['googleRegisterBtn', 'Google']
+  ].forEach(([btnId, provider]) => {
+    document.getElementById(btnId)?.addEventListener('click', () => {
+      try { localStorage.setItem('neonAuth', '1'); } catch (err) {}
+      authSuccess('Signed in with ' + provider + '! Taking you home...');
+    });
+  });
+
+  // Password Toggle
+  function togglePassword(inputId, btn) {
+    const input = document.getElementById(inputId);
+    if (input.type === 'password') {
+      input.type = 'text';
+      btn.innerHTML = '<i class="bi bi-eye-slash-fill"></i>';
+    } else {
+      input.type = 'password';
+      btn.innerHTML = '<i class="bi bi-eye-fill"></i>';
+    }
+  }
+
+  // Password Strength
+  function checkPasswordStrength(value) {
+    const fill = document.getElementById('strengthFill');
+    const label = document.getElementById('strengthLabel');
+    if (!fill || !label) return;
+
+    let strength = 0;
+    if (value.length >= 8) strength++;
+    if (/[A-Z]/.test(value)) strength++;
+    if (/[0-9]/.test(value)) strength++;
+    if (/[^A-Za-z0-9]/.test(value)) strength++;
+
+    const configs = [
+      { pct: '25%', color: '#ff2d78', text: 'Weak' },
+      { pct: '50%', color: '#ff6b00', text: 'Fair' },
+      { pct: '75%', color: '#00d4ff', text: 'Good' },
+      { pct: '100%', color: '#39ff14', text: 'Strong' }
+    ];
+
+    if (value.length === 0) {
+      fill.style.width = '0%';
+      label.textContent = '';
+      return;
+    }
+
+    const cfg = configs[Math.min(strength - 1, 3)];
+    fill.style.width = cfg.pct;
+    fill.style.background = cfg.color;
+    label.textContent = 'Strength: ' + cfg.text;
+    label.style.color = cfg.color;
+  }
+</script>
+</body>
+</html>

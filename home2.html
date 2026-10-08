@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <meta name="description" content="NeonLux niche-specific neon signs for bedrooms, gaming rooms, cafes, events, businesses, weddings and kids rooms. Find your perfect neon match." />
+  <title>Home — Niche Specific | NeonLux Custom Neon Signs</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23FF2D78'/><stop offset='1' stop-color='%23B020FF'/></linearGradient></defs><rect width='64' height='64' rx='14' fill='url(%23g)'/><path d='M35 6 14 36h11l-2 22 21-30H33l2-22z' fill='white'/></svg>" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Neon Cursor -->
+<div class="cursor-glow" id="cursorGlow"></div>
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <button class="lightbox-close"><i class="bi bi-x-lg"></i></button>
+  <img src="" alt="Neon Sign" class="lightbox-img" />
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg" id="mainNavbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">Neon<span>Lux</span></span></a>
+    <div class="d-flex align-items-center gap-2 d-lg-none">
+      <button class="theme-toggle" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="home2.html">Home2</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-3">
+        <button class="theme-toggle d-none d-lg-flex" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+        <a href="login.html" class="btn-neon-outline btn-neon-sm"><i class="bi bi-person"></i> Login</a>
+        <a href="contact.html" class="btn-neon btn-neon-sm">Get Quote <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== SECTION 1: NICHE HERO ===== -->
+<section class="hero" style="min-height:92vh;">
+  <div class="hero-bg particles-bg">
+    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&auto=format&fit=crop" alt="Stylish living space with neon glow" />
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="row justify-content-center text-center g-5">
+      <div class="col-lg-8">
+        <div class="hero-eyebrow mb-3" data-aos="fade-up">
+          <div class="hero-eyebrow-dot"></div>
+          <span class="badge-neon">✦ Signs For Every Space</span>
+        </div>
+        <h1 class="hero-title" data-aos="fade-right" data-aos-delay="100">
+          Neon Signs<br>Built For <span class="neon-text">Your World</span>
+        </h1>
+        <p class="hero-desc mx-auto" data-aos="fade-right" data-aos-delay="200">Whether it's a cozy bedroom, a buzzing gaming den, a chic cafe or a wedding backdrop — we have the perfect neon sign crafted specifically for your niche.</p>
+        <div class="d-flex flex-wrap gap-3 justify-content-center" data-aos="fade-right" data-aos-delay="300">
+          <a href="#niches" class="btn-neon btn-neon-lg"><i class="bi bi-grid-3x3-gap-fill"></i> Browse By Space</a>
+          <a href="contact.html" class="btn-neon-outline btn-neon-lg"><i class="bi bi-pencil-fill"></i> Design Yours</a>
+        </div>
+        <div class="mt-4" data-aos="fade-up" data-aos-delay="400">
+          <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+            <span style="padding:8px 16px;border-radius:50px;background:rgba(255,45,120,0.1);border:1px solid rgba(255,45,120,0.3);font-size:0.85rem;color:var(--pink);"><i class="bi bi-lamp" aria-hidden="true"></i> Bedroom</span>
+            <span style="padding:8px 16px;border-radius:50px;background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.3);font-size:0.85rem;color:var(--blue);"><i class="bi bi-controller" aria-hidden="true"></i> Gaming</span>
+            <span style="padding:8px 16px;border-radius:50px;background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.3);font-size:0.85rem;color:var(--neon-orange);"><i class="bi bi-cup-hot" aria-hidden="true"></i> Cafe</span>
+            <span style="padding:8px 16px;border-radius:50px;background:rgba(191,0,255,0.1);border:1px solid rgba(191,0,255,0.3);font-size:0.85rem;color:#CE6BFF;"><i class="bi bi-gem" aria-hidden="true"></i> Wedding</span>
+          </div>
+        </div>
+      </div>
+          </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 2: NICHE CATEGORIES ===== -->
+<section class="section-pad" id="niches" style="background:var(--bg-1);">
+  <div class="container">
+    <div class="text-center section-header">
+      <div class="badge-neon mb-3" data-aos="fade-up"><i class="bi bi-house" aria-hidden="true"></i> Shop By Space</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Neon Signs For <span>Every</span> Niche</h2>
+      <p class="section-subtitle mx-auto" data-aos="fade-up" data-aos-delay="200">Purpose-built neon sign collections tailored to the specific vibe, aesthetic and need of each space.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Bedroom -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="niche-card">
+          <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=700&auto=format&fit=crop" alt="Bedroom neon signs" style="height:340px;" loading="lazy" />
+          <div class="niche-card-overlay" style="background:linear-gradient(to top, rgba(5,5,15,0.95) 0%, rgba(5,5,15,0.1) 60%, transparent);">
+            <div class="niche-icon"><i class="bi bi-lamp" aria-hidden="true"></i></div>
+            <h3 style="color:#fff;font-weight:700;font-size:1.3rem;margin-bottom:6px;">Bedroom Signs</h3>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-bottom:12px;">Dreamy pink glows, motivational phrases, names and aesthetic vibes for your personal space.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:var(--pink);font-size:0.85rem;font-weight:600;">24 designs from £79</span>
+              <a href="services.html" class="btn-neon btn-neon-sm">Shop</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gaming -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="niche-card">
+          <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=700&auto=format&fit=crop" alt="Gaming room neon signs" style="height:340px;" loading="lazy" />
+          <div class="niche-card-overlay" style="background:linear-gradient(to top, rgba(5,5,15,0.95) 0%, rgba(5,5,15,0.1) 60%, transparent);">
+            <div class="niche-icon" style="background:rgba(0,212,255,0.15);border-color:rgba(0,212,255,0.4);"><i class="bi bi-controller" aria-hidden="true"></i></div>
+            <h3 style="color:#fff;font-weight:700;font-size:1.3rem;margin-bottom:6px;">Gaming Rooms</h3>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-bottom:12px;">Level up your setup with controller icons, game phrases, and electric blue gaming neons.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:var(--blue);font-size:0.85rem;font-weight:600;">32 designs from £89</span>
+              <a href="services.html" class="btn-neon btn-neon-sm" style="background:linear-gradient(135deg,#0077B6,#004FC4);box-shadow:0 0 20px rgba(0,212,255,0.4);">Shop</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cafe -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="niche-card">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=700&auto=format&fit=crop" alt="Cafe neon signs" style="height:340px;" loading="lazy" />
+          <div class="niche-card-overlay" style="background:linear-gradient(to top, rgba(5,5,15,0.95) 0%, rgba(5,5,15,0.1) 60%, transparent);">
+            <div class="niche-icon" style="background:rgba(255,107,0,0.15);border-color:rgba(255,107,0,0.4);"><i class="bi bi-cup-hot" aria-hidden="true"></i></div>
+            <h3 style="color:#fff;font-weight:700;font-size:1.3rem;margin-bottom:6px;">Cafes & Bars</h3>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-bottom:12px;">Instagrammable neons for menus, welcome signs, logos and feature walls in food & drink venues.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:var(--neon-orange);font-size:0.85rem;font-weight:600;">18 designs from £129</span>
+              <a href="services.html" class="btn-neon btn-neon-sm btn-dark-text" style="background:linear-gradient(135deg,#ff6b00,#fffc00);box-shadow:0 0 20px rgba(255,107,0,0.4);">Shop</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Events -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="niche-card">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=700&auto=format&fit=crop" alt="Event neon signs" style="height:340px;" loading="lazy" />
+          <div class="niche-card-overlay" style="background:linear-gradient(to top, rgba(5,5,15,0.95) 0%, rgba(5,5,15,0.1) 60%, transparent);">
+            <div class="niche-icon" style="background:rgba(57,255,20,0.15);border-color:rgba(57,255,20,0.4);"><i class="bi bi-gift" aria-hidden="true"></i></div>
+            <h3 style="color:#fff;font-weight:700;font-size:1.3rem;margin-bottom:6px;">Events & Parties</h3>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-bottom:12px;">Birthday, anniversary, corporate and milestone event neons that create unforgettable moments.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:var(--green);font-size:0.85rem;font-weight:600;">20 designs from £99</span>
+              <a href="services.html" class="btn-neon btn-neon-sm" style="background:linear-gradient(135deg,#0A7A38,#0077B6);box-shadow:0 0 20px rgba(57,255,20,0.4);">Shop</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="niche-card">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&auto=format&fit=crop" alt="Business neon signs" style="height:340px;" loading="lazy" />
+          <div class="niche-card-overlay" style="background:linear-gradient(to top, rgba(5,5,15,0.95) 0%, rgba(5,5,15,0.1) 60%, transparent);">
+            <div class="niche-icon" style="background:rgba(191,0,255,0.15);border-color:rgba(191,0,255,0.4);"><i class="bi bi-building" aria-hidden="true"></i></div>
+            <h3 style="color:#fff;font-weight:700;font-size:1.3rem;margin-bottom:6px;">Businesses</h3>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-bottom:12px;">Brand your business with custom logo neons, slogans and storefront signs that stop traffic.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:#CE6BFF;font-size:0.85rem;font-weight:600;">Custom pricing</span>
+              <a href="contact.html" class="btn-neon btn-neon-sm" style="background:linear-gradient(135deg,#9E12D4,#D6165E);box-shadow:0 0 20px rgba(191,0,255,0.4);">Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weddings -->
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="niche-card">
+          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=700&auto=format&fit=crop" alt="Wedding neon signs" style="height:340px;" loading="lazy" />
+          <div class="niche-card-overlay" style="background:linear-gradient(to top, rgba(5,5,15,0.95) 0%, rgba(5,5,15,0.1) 60%, transparent);">
+            <div class="niche-icon" style="background:rgba(255,192,203,0.15);border-color:rgba(255,192,203,0.4);"><i class="bi bi-gem" aria-hidden="true"></i></div>
+            <h3 style="color:#fff;font-weight:700;font-size:1.3rem;margin-bottom:6px;">Weddings</h3>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-bottom:12px;">"Mr & Mrs", couple initials, vows and love phrases — illuminated for your most special day.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:#ffb6c1;font-size:0.85rem;font-weight:600;">16 designs from £169</span>
+              <a href="services.html" class="btn-neon btn-neon-sm btn-dark-text" style="background:linear-gradient(135deg,#ff69b4,#bf00ff);box-shadow:0 0 20px rgba(255,105,180,0.4);">Shop</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: KIDS ROOM SPECIAL ===== -->
+<section class="section-pad" id="kids">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="badge-neon badge-neon-green mb-3"><i class="bi bi-palette" aria-hidden="true"></i> For the Little Ones</div>
+        <h2 class="section-title">Magical Kids Room <span>Neon Signs</span></h2>
+        <p style="color:var(--t2);font-size:1.05rem;line-height:1.8;margin-bottom:28px;">Safe, low-voltage LED neon signs that spark imagination and add wonder to nurseries and children's rooms. Choose from stars, unicorns, dinosaurs, rockets, names and magical phrases.</p>
+        <ul class="feature-list mb-4">
+          <li><i class="bi bi-check-circle-fill"></i> Safe, cool-to-touch LED technology</li>
+          <li><i class="bi bi-check-circle-fill"></i> Any child's name in fun bubble fonts</li>
+          <li><i class="bi bi-check-circle-fill"></i> Soft pastels, rainbow or nightlight mode</li>
+          <li><i class="bi bi-check-circle-fill"></i> Remote-controlled brightness & color</li>
+          <li><i class="bi bi-check-circle-fill"></i> Certified child-safe materials (CE marked)</li>
+        </ul>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="services.html" class="btn-neon">Shop Kids Signs</a>
+          <a href="service-details.html" class="btn-neon-outline">See Details</a>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="neon-card">
+              <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&auto=format&fit=crop" alt="Kids neon unicorn sign" style="height:220px;" loading="lazy" />
+              <div class="neon-card-overlay">
+                <div class="neon-card-title" style="font-size:1.1rem;"><i class="bi bi-stars" aria-hidden="true"></i> MAGIC</div>
+                <div class="neon-card-price" style="font-size:1.1rem;">from £79</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="neon-card" style="margin-top:30px;">
+              <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=500&auto=format&fit=crop" alt="Kids star neon sign" style="height:220px;" loading="lazy" />
+              <div class="neon-card-overlay">
+                <div class="neon-card-title" style="font-size:1.1rem;"><i class="bi bi-star-fill" aria-hidden="true"></i> DREAM</div>
+                <div class="neon-card-price" style="font-size:1.1rem;">from £69</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="neon-card">
+              <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=700&auto=format&fit=crop" alt="Kids room name neon sign" style="height:180px;" loading="lazy" />
+              <div class="neon-card-overlay" style="background:linear-gradient(to top,rgba(5,5,15,0.9),transparent 60%);">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <div class="neon-card-title">Custom Name Signs</div>
+                    <div class="neon-card-subtitle">Any name, any color</div>
+                  </div>
+                  <div class="neon-card-price">from £89</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 4: FEATURED LOOKS — BEFORE/AFTER ===== -->
+<section class="section-pad" style="background:var(--bg-1);">
+  <div class="container">
+    <div class="text-center section-header">
+      <div class="badge-neon mb-3" data-aos="fade-up"><i class="bi bi-camera" aria-hidden="true"></i> Real Results</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">See the <span>Transformation</span></h2>
+      <p class="section-subtitle mx-auto" data-aos="fade-up" data-aos-delay="200">From blank walls to breathtaking spaces — witness the neon effect.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="glass-card text-center" style="padding:0;overflow:hidden;">
+          <div style="position:relative;">
+            <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=500&auto=format&fit=crop" alt="Bedroom transformation" style="width:100%;height:220px;object-fit:cover;" loading="lazy" />
+            <div style="position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#D6165E,#9E12D4);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;">BEFORE</div>
+          </div>
+          <div style="padding:16px;text-align:left;">
+            <div style="font-weight:600;font-size:0.9rem;">Plain Bedroom Wall</div>
+            <div style="font-size:0.8rem;color:var(--t3);">No personality or ambience</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-card text-center" style="padding:0;overflow:hidden;border-color:rgba(255,45,120,0.3);">
+          <div style="position:relative;">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=500&auto=format&fit=crop" alt="Bedroom after neon" style="width:100%;height:220px;object-fit:cover;" loading="lazy" />
+            <div style="position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#0A7A38,#0077B6);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;">AFTER</div>
+          </div>
+          <div style="padding:16px;text-align:left;">
+            <div style="font-weight:600;font-size:0.9rem;">NeonLux "DREAM BIG" Sign</div>
+            <div style="font-size:0.8rem;color:var(--green);">Stunning ✓ Personal ✓ Glowing</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="glass-card text-center" style="padding:0;overflow:hidden;">
+          <div style="position:relative;">
+            <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=500&auto=format&fit=crop" alt="Gaming room before" style="width:100%;height:220px;object-fit:cover;" loading="lazy" />
+            <div style="position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#D6165E,#9E12D4);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;">BEFORE</div>
+          </div>
+          <div style="padding:16px;text-align:left;">
+            <div style="font-weight:600;font-size:0.9rem;">Basic Gaming Corner</div>
+            <div style="font-size:0.8rem;color:var(--t3);">Just a desk and screens</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="glass-card text-center" style="padding:0;overflow:hidden;border-color:rgba(0,212,255,0.3);">
+          <div style="position:relative;">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&auto=format&fit=crop" alt="Gaming room after neon" style="width:100%;height:220px;object-fit:cover;" loading="lazy" />
+            <div style="position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#0077B6,#004FC4);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;">AFTER</div>
+          </div>
+          <div style="padding:16px;text-align:left;">
+            <div style="font-weight:600;font-size:0.9rem;">NeonLux "GAME ZONE" Sign</div>
+            <div style="font-size:0.8rem;color:var(--blue);">Epic ✓ Immersive ✓ Lit</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: PRICING BY NICHE ===== -->
+<section class="section-pad" id="pricing">
+  <div class="container">
+    <div class="text-center section-header">
+      <div class="badge-neon mb-3" data-aos="fade-up"><i class="bi bi-tag" aria-hidden="true"></i> Transparent Pricing</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Simple, <span>Honest Pricing</span></h2>
+      <p class="section-subtitle mx-auto" data-aos="fade-up" data-aos-delay="200">No hidden fees. Quality craftsmanship at every price point.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="pricing-card h-100">
+          <div style="font-size:2rem;margin-bottom:12px;"><i class="bi bi-star-fill" aria-hidden="true"></i></div>
+          <h4 style="font-weight:700;margin-bottom:6px;">Starter Glow</h4>
+          <p style="color:var(--t3);font-size:0.9rem;margin-bottom:20px;">Small signs for personal spaces</p>
+          <div style="margin-bottom:24px;">
+            <span class="pricing-currency">£</span>
+            <span class="pricing-price">79</span>
+            <span class="pricing-period"> / sign</span>
+          </div>
+          <ul class="feature-list mb-4">
+            <li><i class="bi bi-check-circle-fill"></i> Up to 40cm wide</li>
+            <li><i class="bi bi-check-circle-fill"></i> 10 color choices</li>
+            <li><i class="bi bi-check-circle-fill"></i> 5 font styles</li>
+            <li><i class="bi bi-check-circle-fill"></i> 5-7 day delivery</li>
+            <li><i class="bi bi-check-circle-fill"></i> 1-year warranty</li>
+          </ul>
+          <a href="contact.html" class="btn-neon-outline w-100 justify-content-center">Get Started</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="pricing-card featured h-100">
+          <div style="font-size:2rem;margin-bottom:12px;"><i class="bi bi-lightning-charge" aria-hidden="true"></i></div>
+          <h4 style="font-weight:700;margin-bottom:6px;">Premium Glow</h4>
+          <p style="color:var(--t3);font-size:0.9rem;margin-bottom:20px;">Best for bedrooms & events</p>
+          <div style="margin-bottom:24px;">
+            <span class="pricing-currency" style="background:var(--g-pink);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">£</span>
+            <span class="pricing-price">149</span>
+            <span class="pricing-period"> / sign</span>
+          </div>
+          <ul class="feature-list mb-4">
+            <li><i class="bi bi-check-circle-fill"></i> Up to 90cm wide</li>
+            <li><i class="bi bi-check-circle-fill"></i> 20+ color options</li>
+            <li><i class="bi bi-check-circle-fill"></i> 15 font styles</li>
+            <li><i class="bi bi-check-circle-fill"></i> Remote dimmer included</li>
+            <li><i class="bi bi-check-circle-fill"></i> Express 3-5 day delivery</li>
+            <li><i class="bi bi-check-circle-fill"></i> 3-year warranty</li>
+          </ul>
+          <a href="contact.html" class="btn-neon w-100 justify-content-center">Order Now</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="pricing-card h-100">
+          <div style="font-size:2rem;margin-bottom:12px;"><i class="bi bi-award" aria-hidden="true"></i></div>
+          <h4 style="font-weight:700;margin-bottom:6px;">Business Pro</h4>
+          <p style="color:var(--t3);font-size:0.9rem;margin-bottom:20px;">For businesses & large events</p>
+          <div style="margin-bottom:24px;">
+            <span class="pricing-currency">£</span>
+            <span class="pricing-price">Custom</span>
+          </div>
+          <ul class="feature-list mb-4">
+            <li><i class="bi bi-check-circle-fill"></i> Unlimited size options</li>
+            <li><i class="bi bi-check-circle-fill"></i> Logo & custom shapes</li>
+            <li><i class="bi bi-check-circle-fill"></i> All fonts + custom fonts</li>
+            <li><i class="bi bi-check-circle-fill"></i> Professional installation</li>
+            <li><i class="bi bi-check-circle-fill"></i> Priority production</li>
+            <li><i class="bi bi-check-circle-fill"></i> Lifetime support</li>
+          </ul>
+          <a href="contact.html" class="btn-neon-outline w-100 justify-content-center">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 6: CTA + INSTAGRAM FEED ===== -->
+<section class="section-pad" style="background:var(--bg-1);">
+  <div class="container">
+    <!-- Instagram-style Feed -->
+    <div class="text-center section-header">
+      <div class="badge-neon mb-3" data-aos="fade-up"><i class="bi bi-phone" aria-hidden="true"></i> @NeonLuxSigns</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Follow Our <span>Neon Journey</span></h2>
+      <p class="section-subtitle mx-auto" data-aos="fade-up" data-aos-delay="200">Tag us in your photos for a chance to be featured. Join 200K+ neon lovers.</p>
+    </div>
+
+    <div class="row g-3 mb-5">
+      <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="0">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1728734719929-2536485e280b?w=300&auto=format&fit=crop" alt="Pink neon heart sign glowing in a shop window at night" style="height:140px;object-fit:cover;width:100%;border-radius:12px;" loading="lazy" />
+          <div class="gallery-overlay" style="border-radius:12px;">
+            <i class="bi bi-instagram" style="color:white;font-size:1.5rem;"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="50">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1563089145-599997674d42?w=300&auto=format&fit=crop" alt="Instagram neon" style="height:140px;object-fit:cover;width:100%;border-radius:12px;" loading="lazy" />
+          <div class="gallery-overlay" style="border-radius:12px;"><i class="bi bi-instagram" style="color:white;font-size:1.5rem;"></i></div>
+        </div>
+      </div>
+      <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="100">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=300&auto=format&fit=crop" alt="Instagram neon" style="height:140px;object-fit:cover;width:100%;border-radius:12px;" loading="lazy" />
+          <div class="gallery-overlay" style="border-radius:12px;"><i class="bi bi-instagram" style="color:white;font-size:1.5rem;"></i></div>
+        </div>
+      </div>
+      <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="150">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=300&auto=format&fit=crop" alt="Instagram neon" style="height:140px;object-fit:cover;width:100%;border-radius:12px;" loading="lazy" />
+          <div class="gallery-overlay" style="border-radius:12px;"><i class="bi bi-instagram" style="color:white;font-size:1.5rem;"></i></div>
+        </div>
+      </div>
+      <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="200">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=300&auto=format&fit=crop" alt="Instagram neon" style="height:140px;object-fit:cover;width:100%;border-radius:12px;" loading="lazy" />
+          <div class="gallery-overlay" style="border-radius:12px;"><i class="bi bi-instagram" style="color:white;font-size:1.5rem;"></i></div>
+        </div>
+      </div>
+      <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="250">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?w=300&auto=format&fit=crop" alt="Instagram neon" style="height:140px;object-fit:cover;width:100%;border-radius:12px;" loading="lazy" />
+          <div class="gallery-overlay" style="border-radius:12px;"><i class="bi bi-instagram" style="color:white;font-size:1.5rem;"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="row align-items-center g-4" style="background:linear-gradient(135deg,rgba(255,45,120,0.1),rgba(191,0,255,0.08));border:1px solid rgba(255,45,120,0.2);border-radius:28px;padding:50px;">
+      <div class="col-lg-7" data-aos="fade-right">
+        <div class="badge-neon mb-3"><i class="bi bi-stars" aria-hidden="true"></i> Ready to Glow?</div>
+        <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:16px;">
+          Start Designing Your <span style="background:var(--g-pink);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Perfect Neon Sign</span> Today
+        </h2>
+        <p style="color:var(--t2);max-width:480px;">Join 15,000+ happy customers who've illuminated their lives with NeonLux. Custom orders accepted within 24 hours.</p>
+      </div>
+      <div class="col-lg-5 text-lg-end" data-aos="fade-left">
+        <div class="d-flex flex-column gap-3 align-items-lg-end">
+          <a href="services.html" class="btn-neon btn-neon-lg"><i class="bi bi-lightning-fill"></i> Shop All Signs</a>
+          <a href="contact.html" class="btn-neon-outline btn-neon-lg"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <span class="footer-brand"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">NeonLux</span></span>
+        <p class="footer-desc">Premium custom neon word signs & room decor. Handcrafted with precision for bedrooms, gaming rooms, cafes, events and businesses since 2019.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          <a href="#" class="social-link" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+          <a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <h6 class="footer-heading">Pages</h6>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="bi bi-arrow-right-short"></i> Home</a></li>
+          <li><a href="home2.html"><i class="bi bi-arrow-right-short"></i> Home2</a></li>
+          <li><a href="about.html"><i class="bi bi-arrow-right-short"></i> About Us</a></li>
+          <li><a href="services.html"><i class="bi bi-arrow-right-short"></i> Services</a></li>
+          <li><a href="blog.html"><i class="bi bi-arrow-right-short"></i> Blog</a></li>
+          <li><a href="contact.html"><i class="bi bi-arrow-right-short"></i> Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <h6 class="footer-heading">Services</h6>
+        <ul class="footer-links">
+          <li><a href="service-details.html"><i class="bi bi-arrow-right-short"></i> Custom Neon Signs</a></li>
+          <li><a href="service-details.html"><i class="bi bi-arrow-right-short"></i> Bedroom Signs</a></li>
+          <li><a href="service-details.html"><i class="bi bi-arrow-right-short"></i> Business Branding</a></li>
+          <li><a href="service-details.html"><i class="bi bi-arrow-right-short"></i> Wedding Signs</a></li>
+          <li><a href="service-details.html"><i class="bi bi-arrow-right-short"></i> Event Installations</a></li>
+          <li><a href="service-details.html"><i class="bi bi-arrow-right-short"></i> Kids Room Signs</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h6 class="footer-heading">Stay in the Glow</h6>
+        <p style="font-size:0.9rem;color:var(--t2);margin-bottom:16px;">Get exclusive deals, new designs and neon inspiration delivered to your inbox.</p>
+        <form class="newsletter-form" style="display:flex;gap:8px;">
+          <input type="email" class="form-control" placeholder="Your email" required style="flex:1;" />
+          <button type="submit" class="btn-neon" style="padding:14px 20px;white-space:nowrap;"><i class="bi bi-send-fill"></i></button>
+        </form>
+        <div class="mt-4">
+          <div style="font-size:0.85rem;color:var(--t3);margin-bottom:8px;">Accepted Payments</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="padding:4px 12px;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:8px;font-size:0.8rem;color:var(--t2);"><i class="bi bi-credit-card" aria-hidden="true"></i> Visa</span>
+            <span style="padding:4px 12px;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:8px;font-size:0.8rem;color:var(--t2);"><i class="bi bi-credit-card" aria-hidden="true"></i> Mastercard</span>
+            <span style="padding:4px 12px;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:8px;font-size:0.8rem;color:var(--t2);"><i class="bi bi-paypal" aria-hidden="true"></i> PayPal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 NeonLux. All rights reserved. Crafted with <i class="bi bi-heart-fill" aria-hidden="true"></i> & neon glow.</p>
+      <div class="d-flex gap-3 flex-wrap">
+        <a href="#" style="color:var(--t3);font-size:0.85rem;">Privacy Policy</a>
+        <a href="#" style="color:var(--t3);font-size:0.85rem;">Terms of Service</a>
+        <a href="#" style="color:var(--t3);font-size:0.85rem;">Shipping Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ once: true, duration: 700, offset: 80 });</script>
+<script src="js/main.js"></script>
+</body>
+</html>
