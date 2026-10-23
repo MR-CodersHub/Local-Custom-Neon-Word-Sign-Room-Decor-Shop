@@ -27,7 +27,8 @@
   <div class="container">
     <a class="navbar-brand" href="index.html"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">Neon<span>Lux</span></span></a>
     <div class="nav-trigger-group d-lg-none">
-      <button class="theme-toggle" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+      <button type="button" class="theme-toggle-btn" id="themeToggleMobile" aria-label="Switch to light theme" title="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+      <button type="button" class="rtl-toggle-btn" id="rtlToggleMobile" aria-label="Switch to right-to-left layout" title="Switch layout direction"><i class="bi bi-arrow-left-right" aria-hidden="true"></i> <span class="rtl-label">RTL</span></button>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -42,9 +43,9 @@
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button class="theme-toggle d-none d-lg-flex" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
-        <a href="login.html" class="btn-neon-outline btn-neon-sm"><i class="bi bi-person"></i> Login</a>
-        <a href="contact.html" class="btn-neon btn-neon-sm">Get Quote <i class="bi bi-arrow-right"></i></a>
+        <button type="button" class="theme-toggle-btn d-none d-lg-flex" id="themeToggleDesktop" aria-label="Switch to light theme" title="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+        <button type="button" class="rtl-toggle-btn d-none d-lg-inline-flex" id="rtlToggleDesktop" aria-label="Switch to right-to-left layout" title="Switch layout direction"><i class="bi bi-arrow-left-right" aria-hidden="true"></i> <span class="rtl-label">RTL</span></button>
+        <a href="contact.html" class="btn-neon btn-neon-sm">Request a Quote <i class="bi bi-arrow-right"></i></a>
       </div>
     </div>
   </div>
@@ -77,23 +78,23 @@
     <div class="row g-5 align-items-start">
       <!-- Gallery -->
       <div class="col-lg-6" data-aos="fade-right">
-        <div class="product-zoom-wrapper mb-3" data-lightbox="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=1200">
-          <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800&auto=format&fit=crop" alt="Custom neon sign close-up" style="width:100%;height:420px;object-fit:cover;border-radius:20px;" loading="lazy" />
+        <div class="product-zoom-wrapper mb-3" data-lightbox="images/dream-big-blue-neon.jpg">
+          <img src="images/dream-big-blue-neon.jpg" alt="Custom LED neon word sign glowing in modern interior" style="width:100%;height:420px;object-fit:cover;border-radius:20px;" loading="lazy" />
         </div>
         <div class="row g-3">
           <div class="col-4">
-            <div class="product-zoom-wrapper" data-lightbox="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800">
-              <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=300&auto=format&fit=crop" alt="Neon sign thumbnail 1" style="width:100%;height:100px;object-fit:cover;border-radius:12px;border:2px solid var(--glass-border);" loading="lazy" />
+            <div class="product-zoom-wrapper" data-lightbox="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800">
+              <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=300&auto=format&fit=crop" alt="Neon sign brick wall mount detail" style="width:100%;height:100px;object-fit:cover;border-radius:12px;border:2px solid var(--glass-border);" loading="lazy" />
             </div>
           </div>
           <div class="col-4">
-            <div class="product-zoom-wrapper" data-lightbox="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800">
-              <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=300&auto=format&fit=crop" alt="Neon sign thumbnail 2" style="width:100%;height:100px;object-fit:cover;border-radius:12px;border:2px solid var(--glass-border);" loading="lazy" />
+            <div class="product-zoom-wrapper" data-lightbox="https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=800">
+              <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=300&auto=format&fit=crop" alt="LED neon flex tube craftsmanship close-up" style="width:100%;height:100px;object-fit:cover;border-radius:12px;border:2px solid var(--glass-border);" loading="lazy" />
             </div>
           </div>
           <div class="col-4">
-            <div class="product-zoom-wrapper" data-lightbox="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800">
-              <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=300&auto=format&fit=crop" alt="Neon sign thumbnail 3" style="width:100%;height:100px;object-fit:cover;border-radius:12px;border:2px solid var(--glass-border);" loading="lazy" />
+            <div class="product-zoom-wrapper" data-lightbox="https://images.unsplash.com/photo-1615873968403-89e068629265?w=800">
+              <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?w=300&auto=format&fit=crop" alt="Neon sign room styling in bedroom" style="width:100%;height:100px;object-fit:cover;border-radius:12px;border:2px solid var(--glass-border);" loading="lazy" />
             </div>
           </div>
         </div>
@@ -134,8 +135,8 @@
         </div>
 
         <div class="d-flex gap-3 flex-wrap mb-4">
-          <a href="contact.html" class="btn-neon btn-neon-lg flex-fill justify-content-center"><i class="bi bi-lightning-fill"></i> Order Now</a>
-          <a href="contact.html" class="btn-neon-outline btn-neon-lg"><i class="bi bi-chat-dots-fill"></i> Get Quote</a>
+          <a href="contact.html" class="btn-primary btn-lg flex-fill justify-content-center"><i class="bi bi-lightning-fill"></i> Order Now</a>
+          <a href="contact.html" class="btn-secondary btn-lg"><i class="bi bi-chat-dots-fill"></i> Get Quote</a>
         </div>
 
         <div class="d-flex gap-4 flex-wrap" style="padding:20px;background:var(--bg-1);border-radius:16px;">
@@ -227,6 +228,181 @@
   </div>
 </section>
 
+<!-- ===== SECTION 2B: COMPLETED PROJECT CASE STUDIES & CRAFTSMANSHIP ===== -->
+<section class="section-pad" id="project-case-studies" style="background:var(--bg-0);">
+  <div class="container">
+    <div class="text-center section-header">
+      <div class="badge-neon mb-3" data-aos="fade-up"><i class="bi bi-clipboard2-check"></i> Verified Deliverables</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Completed Project <span>Case Studies</span></h2>
+      <p class="section-subtitle mx-auto" data-aos="fade-up" data-aos-delay="200">Explore technical specifications, client requirements, and delivered engineering outcomes from recent bespoke sign installations.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Case Study 1 -->
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <article class="project-card h-100" id="project-dream-big">
+          <div class="project-card-media">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=700&auto=format&fit=crop" alt="Dream Big custom hot pink neon sign mounted above master bed" loading="lazy" />
+            <span class="project-card-badge">Residential</span>
+            <span class="project-card-price">£149 Delivered</span>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">DREAM BIG — Master Bedroom Sanctuary</h3>
+            <div class="project-card-subtitle"><i class="bi bi-geo-alt"></i> 60cm × 24cm • Hot Pink (625nm)</div>
+            <p class="project-card-desc">Handcrafted cursive LED neon engineered as an ambient headboard feature with zero buzzing noise.</p>
+            
+            <div class="project-card-section">
+              <div class="project-card-section-label"><i class="bi bi-flag"></i> Client Challenge</div>
+              <p>Homeowner wanted soothing bedtime reading light without glare, heat emissions, or the buzzing hum typical of high-voltage transformers.</p>
+            </div>
+
+            <div class="project-card-section">
+              <div class="project-card-section-label"><i class="bi bi-tools"></i> Engineering &amp; Materials</div>
+              <p>12V silicone LED flex mounted on 5mm optical cast acrylic backplate with precision CNC contour edging and inline RF wireless touch dimmer.</p>
+            </div>
+
+            <div class="project-specs-grid">
+              <div class="project-spec-item">
+                <span class="project-spec-label">Voltage &amp; Power</span>
+                <span class="project-spec-value">12V DC • 14W</span>
+              </div>
+              <div class="project-spec-item">
+                <span class="project-spec-label">Acoustics</span>
+                <span class="project-spec-value">0dB Silent</span>
+              </div>
+              <div class="project-spec-item">
+                <span class="project-spec-label">Dimming Range</span>
+                <span class="project-spec-value">10% – 100% RF</span>
+              </div>
+              <div class="project-spec-item">
+                <span class="project-spec-label">Mounting</span>
+                <span class="project-spec-value">Laser Standoffs</span>
+              </div>
+            </div>
+
+            <div class="project-card-results">
+              <strong>Delivered Outcome:</strong> 85% energy reduction vs glass tubes, cool-to-touch safety within arm's reach of bed, and 10-minute damage-free wall install.
+            </div>
+
+            <div class="project-card-actions">
+              <a href="contact.html?sign=dream-big" class="btn-primary btn-sm"><i class="bi bi-lightning-fill"></i> Order Sign</a>
+              <a href="contact.html?inquiry=specs" class="btn-secondary btn-sm"><i class="bi bi-file-earmark-text"></i> Custom Quote</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Case Study 2 -->
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <article class="project-card h-100" id="project-game-over">
+          <div class="project-card-media">
+            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=700&auto=format&fit=crop" alt="Game Over electric blue gaming room battlestation neon" loading="lazy" />
+            <span class="project-card-badge" style="background:rgba(0,109,152,0.85);border-color:rgba(0,200,248,0.4);">Esports Studio</span>
+            <span class="project-card-price">£179 Delivered</span>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">GAME OVER — Battlestation Broadcast Rig</h3>
+            <div class="project-card-subtitle"><i class="bi bi-controller"></i> 80cm × 30cm • Electric Blue (465nm)</div>
+            <p class="project-card-desc">Studio-grade anti-flicker signage designed specifically for Twitch streaming battlestation backgrounds.</p>
+            
+            <div class="project-card-section">
+              <div class="project-card-section-label"><i class="bi bi-flag"></i> Client Challenge</div>
+              <p>Webcam sensor banding and high-speed shutter flicker caused by conventional pulse drivers during 1080p60 live broadcasts.</p>
+            </div>
+
+            <div class="project-card-section">
+              <div class="project-card-section-label"><i class="bi bi-tools"></i> Engineering &amp; Materials</div>
+              <p>High-frequency &gt;20kHz PWM constant-current power circuit, non-reflective smoke acrylic backboard, and drywall anchor hardware.</p>
+            </div>
+
+            <div class="project-specs-grid">
+              <div class="project-spec-item">
+                <span class="project-spec-label">Voltage &amp; Power</span>
+                <span class="project-spec-value">12V DC • 18W</span>
+              </div>
+              <div class="project-spec-item">
+                <span class="project-spec-label">Camera Sync</span>
+                <span class="project-spec-value">Flicker-Free &gt;20kHz</span>
+              </div>
+              <div class="project-spec-item">
+                <span class="project-spec-label">Backboard</span>
+                <span class="project-spec-value">5mm Smoke Cast</span>
+              </div>
+              <div class="project-spec-item">
+                <span class="project-spec-label">Lifespan</span>
+                <span class="project-spec-value">50,000+ Hours</span>
+              </div>
+            </div>
+
+            <div class="project-card-results">
+              <strong>Delivered Outcome:</strong> Zero rolling shutter lines or camera moire effects on streaming feeds, crisp deep blue contrast, and durable continuous runtime.
+            </div>
+
+            <div class="project-card-actions">
+              <a href="contact.html?sign=game-over" class="btn-primary btn-sm"><i class="bi bi-lightning-fill"></i> Order Sign</a>
+              <a href="contact.html?inquiry=gaming" class="btn-secondary btn-sm"><i class="bi bi-file-earmark-text"></i> Custom Quote</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Case Study 3 -->
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <article class="project-card h-100" id="project-open-24-7">
+          <div class="project-card-media">
+            <img src="https://images.unsplash.com/photo-1550559014-0ff3ad4b23ea?w=700&auto=format&fit=crop" alt="Open 24/7 commercial storefront neon sign" loading="lazy" />
+            <span class="project-card-badge" style="background:rgba(194,0,90,0.85);border-color:rgba(255,45,120,0.4);">Commercial</span>
+            <span class="project-card-price">£229 Delivered</span>
+          </div>
+          <div class="project-card-body">
+            <h3 class="project-card-title">OPEN 24/7 — Commercial Storefront Display</h3>
+            <div class="project-card-subtitle"><i class="bi bi-shop"></i> 100cm × 38cm • Pink &amp; Blue Dual Tint</div>
+            <p class="project-card-desc">High-candela commercial window neon that pierces sunlight reflection for high-street foot traffic conversion.</p>
+            
+            <div class="project-card-section">
+              <div class="project-card-section-label"><i class="bi bi-flag"></i> Client Challenge</div>
+              <p>Heavy afternoon sun reflections on storefront glazing obscured opening hours, leading to lost customer visits and inquiries.</p>
+            </div>
+
+            <div class="project-card-section">
+              <div class="project-card-section-label"><i class="bi bi-tools"></i> Engineering &amp; Materials</div>
+              <p>Ultra-dense SMD2835 diode core yielding 1,400 lm/m, IP54 silicone exterior seal, and heavy-duty 6mm reinforced acrylic backing with steel chain.</p>
+            </div>
+
+            <div class="project-specs-grid">
+              <div class="project-spec-item">
+                <span class="project-spec-label">Voltage &amp; Power</span>
+                <span class="project-spec-value">12V DC • 28W</span>
+              </div>
+              <div class="project-spec-item">
+                <span class="project-spec-label">Illumination</span>
+                <span class="project-spec-value">1,400 lm/m High-Lux</span>
+              </div>
+              <div class="project-spec-item">
+                <span class="project-spec-label">Ingress Rating</span>
+                <span class="project-spec-value">IP54 Weather-Proof</span>
+              </div>
+              <div class="project-spec-item">
+                <span class="project-spec-label">Certification</span>
+                <span class="project-spec-value">CE &amp; UKCA Certified</span>
+              </div>
+            </div>
+
+            <div class="project-card-results">
+              <strong>Delivered Outcome:</strong> Unmatched 50m daytime visibility cutting through window glare, compliant with UK retail fire &amp; low-voltage building safety.
+            </div>
+
+            <div class="project-card-actions">
+              <a href="contact.html?sign=open-24-7" class="btn-primary btn-sm"><i class="bi bi-lightning-fill"></i> Order Sign</a>
+              <a href="contact.html?inquiry=commercial" class="btn-secondary btn-sm"><i class="bi bi-file-earmark-text"></i> Custom Quote</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== SECTION 3: DETAILED PROCESS ===== -->
 <section class="section-pad">
   <div class="container">
@@ -297,36 +473,36 @@
     <div class="row g-4">
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
         <div class="neon-card">
-          <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&auto=format&fit=crop" alt="Wedding neon service" style="height:220px;" loading="lazy" />
+          <img src="images/wedding-mr-mrs-neon.jpg" alt="Custom wedding neon sign backdrop" style="height:220px;object-fit:cover;" loading="lazy" />
           <div class="neon-card-overlay">
             <div class="neon-card-title">Wedding Neon Signs</div>
             <div style="display:flex;justify-content:space-between;align-items:center;">
               <div class="neon-card-subtitle">From £169</div>
-              <a href="service-details.html" class="btn-neon btn-neon-sm">View</a>
+              <a href="service-details.html" class="btn-secondary btn-sm">View</a>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
         <div class="neon-card">
-          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&auto=format&fit=crop" alt="Gaming room service" style="height:220px;" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600&auto=format&fit=crop" alt="Gaming room setup with vibrant neon sign" style="height:220px;" loading="lazy" />
           <div class="neon-card-overlay">
             <div class="neon-card-title">Gaming Room Signs</div>
             <div style="display:flex;justify-content:space-between;align-items:center;">
               <div class="neon-card-subtitle">From £99</div>
-              <a href="service-details.html" class="btn-neon btn-neon-sm" style="background:linear-gradient(135deg,#0077B6,#004FC4);">View</a>
+              <a href="service-details.html" class="btn-secondary btn-sm">View</a>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
         <div class="neon-card">
-          <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=600&auto=format&fit=crop" alt="Cafe neon service" style="height:220px;" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&auto=format&fit=crop" alt="Cafe and business storefront neon signage" style="height:220px;" loading="lazy" />
           <div class="neon-card-overlay">
             <div class="neon-card-title">Cafe & Business Signs</div>
             <div style="display:flex;justify-content:space-between;align-items:center;">
               <div class="neon-card-subtitle">Custom pricing</div>
-<a href="contact.html" class="btn-neon btn-neon-sm btn-dark-text" style="background:linear-gradient(135deg,#ff6b00,#fffc00);color:#000;">Quote</a>
+              <a href="contact.html" class="btn-primary btn-sm">Quote</a>
             </div>
           </div>
         </div>
@@ -418,7 +594,7 @@
   <div class="container">
     <div class="row g-5">
       <div class="col-lg-4">
-        <span class="footer-brand"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">NeonLux</span></span>
+        <a href="index.html" class="footer-brand" aria-label="NeonLux Home"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">Neon<span>Lux</span></span></a>
         <p class="footer-desc">Premium custom neon word signs & room decor. Handcrafted with precision for bedrooms, gaming rooms, cafes, events and businesses since 2019.</p>
         <div class="social-links">
           <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>

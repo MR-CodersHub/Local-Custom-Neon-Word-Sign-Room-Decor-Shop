@@ -23,7 +23,8 @@
   <div class="container">
     <a class="navbar-brand" href="index.html"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">Neon<span>Lux</span></span></a>
     <div class="nav-trigger-group d-lg-none">
-      <button class="theme-toggle" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+      <button type="button" class="theme-toggle-btn" id="themeToggleMobile" aria-label="Switch to light theme" title="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+      <button type="button" class="rtl-toggle-btn" id="rtlToggleMobile" aria-label="Switch to right-to-left layout" title="Switch layout direction"><i class="bi bi-arrow-left-right" aria-hidden="true"></i> <span class="rtl-label">RTL</span></button>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,9 +39,9 @@
         <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button class="theme-toggle d-none d-lg-flex" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
-        <a href="login.html" class="btn-neon-outline btn-neon-sm"><i class="bi bi-person"></i> Login</a>
-        <a href="contact.html" class="btn-neon btn-neon-sm">Get Quote <i class="bi bi-arrow-right"></i></a>
+        <button type="button" class="theme-toggle-btn d-none d-lg-flex" id="themeToggleDesktop" aria-label="Switch to light theme" title="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+        <button type="button" class="rtl-toggle-btn d-none d-lg-inline-flex" id="rtlToggleDesktop" aria-label="Switch to right-to-left layout" title="Switch layout direction"><i class="bi bi-arrow-left-right" aria-hidden="true"></i> <span class="rtl-label">RTL</span></button>
+        <a href="contact.html" class="btn-neon btn-neon-sm">Request a Quote <i class="bi bi-arrow-right"></i></a>
       </div>
     </div>
   </div>
@@ -116,7 +117,7 @@
 </section>
 
 <!-- ===== SECTION 2: ENQUIRY FORM + SUPPORT ===== -->
-<section class="section-pad">
+<section class="section-pad" id="quote-form">
   <div class="container">
     <div class="row g-5">
       <!-- MAIN ENQUIRY FORM -->
@@ -332,7 +333,7 @@
           <div class="service-icon mx-auto" style="font-size:1.8rem;background:rgba(0,212,255,0.1);border-color:rgba(0,212,255,0.2);"><i class="bi bi-chat-dots" aria-hidden="true"></i></div>
           <h5 style="font-weight:700;margin-bottom:8px;">Live Chat</h5>
           <p style="font-size:0.9rem;color:var(--t2);margin-bottom:20px;">Chat with a real team member. Available weekdays 9am–6pm for instant help.</p>
-          <a href="#" class="btn-neon btn-neon-sm" style="background:linear-gradient(135deg,#0077B6,#004FC4);">Start Chat</a>
+          <a href="#" class="btn-primary btn-sm"><i class="bi bi-chat-dots-fill"></i> Start Chat</a>
         </div>
       </div>
       <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
@@ -340,7 +341,7 @@
           <div class="service-icon mx-auto" style="font-size:1.8rem;background:rgba(57,255,20,0.1);border-color:rgba(57,255,20,0.2);"><i class="bi bi-phone" aria-hidden="true"></i></div>
           <h5 style="font-weight:700;margin-bottom:8px;">WhatsApp</h5>
           <p style="font-size:0.9rem;color:var(--t2);margin-bottom:20px;">Send us a message, photo or voice note. Most responses in under 2 hours.</p>
-          <a href="#" class="btn-neon btn-neon-sm btn-dark-text" style="background:linear-gradient(135deg,#25d366,#128c7e);">WhatsApp Us</a>
+          <a href="https://wa.me/447700900000" target="_blank" rel="noopener noreferrer" class="btn-primary btn-sm"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
         </div>
       </div>
       <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
@@ -348,7 +349,7 @@
           <div class="service-icon mx-auto" style="font-size:1.8rem;background:rgba(191,0,255,0.1);border-color:rgba(191,0,255,0.2);"><i class="bi bi-camera" aria-hidden="true"></i></div>
           <h5 style="font-weight:700;margin-bottom:8px;">Instagram DMs</h5>
           <p style="font-size:0.9rem;color:var(--t2);margin-bottom:20px;">Follow @NeonLuxSigns and slide into our DMs. Share inspo, we'll design it!</p>
-          <a href="#" class="btn-neon btn-neon-sm" style="background:linear-gradient(135deg,#A36523,#9C4729,#961E2F,#8A1743,#80105E);">Follow Us</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-sm"><i class="bi bi-instagram"></i> Follow Us</a>
         </div>
       </div>
       <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
@@ -356,7 +357,7 @@
           <div class="service-icon mx-auto" style="font-size:1.8rem;"><i class="bi bi-envelope" aria-hidden="true"></i></div>
           <h5 style="font-weight:700;margin-bottom:8px;">Email Support</h5>
           <p style="font-size:0.9rem;color:var(--t2);margin-bottom:20px;">For detailed enquiries, quotes and file attachments. We respond within 24 hours.</p>
-          <a href="mailto:hello@neonlux.co.uk" class="btn-neon btn-neon-sm">Send Email</a>
+          <a href="mailto:hello@neonlux.co.uk" class="btn-secondary btn-sm"><i class="bi bi-envelope-fill"></i> Send Email</a>
         </div>
       </div>
     </div>
@@ -474,7 +475,7 @@
   <div class="container">
     <div class="row g-5">
       <div class="col-lg-4">
-        <span class="footer-brand"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">NeonLux</span></span>
+        <a href="index.html" class="footer-brand" aria-label="NeonLux Home"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">Neon<span>Lux</span></span></a>
         <p class="footer-desc">Premium custom neon word signs & room decor. Handcrafted with precision for bedrooms, gaming rooms, cafes, events and businesses since 2019.</p>
         <div class="social-links">
           <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>

@@ -23,7 +23,8 @@
   <div class="container">
     <a class="navbar-brand" href="index.html"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">Neon<span>Lux</span></span></a>
     <div class="nav-trigger-group d-lg-none">
-      <button class="theme-toggle" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+      <button type="button" class="theme-toggle-btn" id="themeToggleMobile" aria-label="Switch to light theme" title="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+      <button type="button" class="rtl-toggle-btn" id="rtlToggleMobile" aria-label="Switch to right-to-left layout" title="Switch layout direction"><i class="bi bi-arrow-left-right" aria-hidden="true"></i> <span class="rtl-label">RTL</span></button>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,9 +39,9 @@
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button class="theme-toggle d-none d-lg-flex" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
-        <a href="login.html" class="btn-neon-outline btn-neon-sm"><i class="bi bi-person"></i> Login</a>
-        <a href="contact.html" class="btn-neon btn-neon-sm">Get Quote <i class="bi bi-arrow-right"></i></a>
+        <button type="button" class="theme-toggle-btn d-none d-lg-flex" id="themeToggleDesktop" aria-label="Switch to light theme" title="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+        <button type="button" class="rtl-toggle-btn d-none d-lg-inline-flex" id="rtlToggleDesktop" aria-label="Switch to right-to-left layout" title="Switch layout direction"><i class="bi bi-arrow-left-right" aria-hidden="true"></i> <span class="rtl-label">RTL</span></button>
+        <a href="contact.html" class="btn-neon btn-neon-sm">Request a Quote <i class="bi bi-arrow-right"></i></a>
       </div>
     </div>
   </div>
@@ -89,8 +90,8 @@
     <div class="badge-neon mb-4" data-aos="fade-up"><i class="bi bi-fire" aria-hidden="true"></i> Featured Article</div>
     <div class="row g-5 align-items-center" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-6">
-        <div class="neon-card" data-lightbox="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200">
-          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&auto=format&fit=crop" alt="Featured: Ultimate Bedroom Neon Guide" style="height:420px;" loading="lazy" />
+        <div class="neon-card" data-lightbox="images/bedroom-neon-sign.jpg">
+          <img src="images/bedroom-neon-sign.jpg" alt="Featured: Ultimate Bedroom Neon Guide" style="height:420px;object-fit:cover;" loading="lazy" />
           <div class="neon-card-badge">FEATURED</div>
           <div class="neon-card-overlay" style="padding:30px;">
             <div class="blog-tag">Bedroom Decor</div>
@@ -143,7 +144,7 @@
       <div class="col-md-6 col-lg-4" data-filter="gaming" data-aos="fade-up" data-aos-delay="0">
         <div class="blog-card h-100">
           <div style="overflow:hidden;border-radius:20px 20px 0 0;">
-            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&auto=format&fit=crop" alt="Gaming Room Neon Setup" style="width:100%;height:230px;object-fit:cover;transition:transform 0.5s ease;" loading="lazy" />
+            <img src="images/gaming-room-neon.jpg" alt="Gaming Room Neon Setup with glowing peripherals" style="width:100%;height:230px;object-fit:cover;transition:transform 0.5s ease;" loading="lazy" />
           </div>
           <div class="blog-card-body">
             <div class="blog-tag" style="color:var(--blue);"><i class="bi bi-controller" aria-hidden="true"></i> Gaming</div>
@@ -168,7 +169,7 @@
       <div class="col-md-6 col-lg-4" data-filter="tips" data-aos="fade-up" data-aos-delay="100">
         <div class="blog-card h-100">
           <div style="overflow:hidden;border-radius:20px 20px 0 0;">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&auto=format&fit=crop" alt="Neon sign care tips" style="width:100%;height:230px;object-fit:cover;transition:transform 0.5s ease;" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=600&auto=format&fit=crop" alt="Master craftsman inspecting and maintaining LED neon sign" style="width:100%;height:230px;object-fit:cover;transition:transform 0.5s ease;" loading="lazy" />
           </div>
           <div class="blog-card-body">
             <div class="blog-tag" style="color:var(--green);"><i class="bi bi-lightbulb" aria-hidden="true"></i> Tips & Tricks</div>
@@ -193,7 +194,7 @@
       <div class="col-md-6 col-lg-4" data-filter="decor" data-aos="fade-up" data-aos-delay="200">
         <div class="blog-card h-100">
           <div style="overflow:hidden;border-radius:20px 20px 0 0;">
-            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop" alt="Cafe neon decor" style="width:100%;height:230px;object-fit:cover;transition:transform 0.5s ease;" loading="lazy" />
+            <img src="images/cafe-bar-neon.jpg" alt="Trendy cafe with vibrant custom neon word sign" style="width:100%;height:230px;object-fit:cover;transition:transform 0.5s ease;" loading="lazy" />
           </div>
           <div class="blog-card-body">
             <div class="blog-tag" style="color:var(--neon-orange);"><i class="bi bi-cup-hot" aria-hidden="true"></i> Cafe & Business</div>
@@ -218,7 +219,7 @@
       <div class="col-md-6 col-lg-4" data-filter="business" data-aos="fade-up" data-aos-delay="0">
         <div class="blog-card h-100">
           <div style="overflow:hidden;border-radius:20px 20px 0 0;">
-            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&auto=format&fit=crop" alt="Business neon branding" style="width:100%;height:230px;object-fit:cover;transition:transform 0.5s ease;" loading="lazy" />
+            <img src="images/business-neon-branding.jpg" alt="Business neon sign branding for retail storefront and commercial reception" style="width:100%;height:230px;object-fit:cover;transition:transform 0.5s ease;" loading="lazy" />
           </div>
           <div class="blog-card-body">
             <div class="blog-tag" style="color:#CE6BFF;"><i class="bi bi-building" aria-hidden="true"></i> Business</div>
@@ -243,7 +244,7 @@
       <div class="col-md-6 col-lg-4" data-filter="decor" data-aos="fade-up" data-aos-delay="100">
         <div class="blog-card h-100">
           <div style="overflow:hidden;border-radius:20px 20px 0 0;">
-            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&auto=format&fit=crop" alt="Wedding neon signs" style="width:100%;height:230px;object-fit:cover;transition:transform 0.5s ease;" loading="lazy" />
+            <img src="images/wedding-mr-mrs-neon.jpg" alt="Romantic wedding Mr and Mrs neon sign illuminating reception backdrop" style="width:100%;height:230px;object-fit:cover;transition:transform 0.5s ease;" loading="lazy" />
           </div>
           <div class="blog-card-body">
             <div class="blog-tag" style="color:#ffb6c1;"><i class="bi bi-gem" aria-hidden="true"></i> Weddings</div>
@@ -268,7 +269,7 @@
       <div class="col-md-6 col-lg-4" data-filter="tips" data-aos="fade-up" data-aos-delay="200">
         <div class="blog-card h-100">
           <div style="overflow:hidden;border-radius:20px 20px 0 0;">
-            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&auto=format&fit=crop" alt="Neon sign fonts guide" style="width:100%;height:230px;object-fit:cover;transition:transform 0.5s ease;" loading="lazy" />
+            <img src="images/neon-fonts-guide.jpg" alt="Custom typography and script neon sign font lettering comparison guide" style="width:100%;height:230px;object-fit:cover;transition:transform 0.5s ease;" loading="lazy" />
           </div>
           <div class="blog-card-body">
             <div class="blog-tag"><i class="bi bi-type" aria-hidden="true"></i> Design Tips</div>
@@ -369,7 +370,7 @@
           </div>
         </div>
         <div class="blog-card mb-4" style="display:flex;flex-direction:row;overflow:hidden;border-radius:20px;height:200px;">
-          <img src="https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?w=400&auto=format&fit=crop" alt="Kids neon room" style="width:220px;min-width:220px;object-fit:cover;" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1576085898323-218337e3e43c?w=400&auto=format&fit=crop" alt="Kids bedroom with magical glowing neon sign" style="width:220px;min-width:220px;object-fit:cover;" loading="lazy" />
           <div style="padding:24px;display:flex;flex-direction:column;justify-content:center;">
             <div class="blog-tag mb-2" style="color:var(--green);"><i class="bi bi-emoji-smile" aria-hidden="true"></i> Kids Rooms</div>
             <h5 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;"><a href="blog-details.html?post=kids-rooms">Magical Kids Room Transformations: Before & After Neon</a></h5>
@@ -386,19 +387,19 @@
           <h5 style="font-weight:700;margin-bottom:20px;"><i class="bi bi-fire" aria-hidden="true"></i> Most Popular</h5>
           <div style="display:flex;flex-direction:column;gap:16px;">
             <div style="display:flex;gap:12px;align-items:center;">
-              <div style="width:36px;height:36px;min-width:36px;border-radius:10px;background:linear-gradient(135deg,#D6165E,#9E12D4);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:#fff;">1</div>
+              <div style="width:36px;height:36px;min-width:36px;border-radius:10px;background:var(--g-pink);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:#fff;">1</div>
               <a href="blog-details.html?post=bedroom-guide" style="color:var(--t1);font-size:0.9rem;font-weight:500;line-height:1.4;">The Ultimate Bedroom Neon Guide 2026</a>
             </div>
             <div style="display:flex;gap:12px;align-items:center;">
-              <div style="width:36px;height:36px;min-width:36px;border-radius:10px;background:linear-gradient(135deg,#0077B6,#004FC4);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:#fff;">2</div>
+              <div style="width:36px;height:36px;min-width:36px;border-radius:10px;background:var(--g-blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:#fff;">2</div>
               <a href="blog-details.html?post=gaming-setups" style="color:var(--t1);font-size:0.9rem;font-weight:500;line-height:1.4;">10 Gaming Room Neon Setups You'll Be Jealous Of</a>
             </div>
             <div style="display:flex;gap:12px;align-items:center;">
-              <div class="btn-dark-text" style="width:36px;height:36px;min-width:36px;border-radius:10px;background:linear-gradient(135deg,#39ff14,#00d4ff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:#000;">3</div>
+              <div style="width:36px;height:36px;min-width:36px;border-radius:10px;background:linear-gradient(135deg, #B020FF, #FF2D78);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:#fff;">3</div>
               <a href="blog-details.html?post=cafe-footfall" style="color:var(--t1);font-size:0.9rem;font-weight:500;line-height:1.4;">How Neon Signs Doubled a Cafe's Footfall</a>
             </div>
             <div style="display:flex;gap:12px;align-items:center;">
-              <div style="width:36px;height:36px;min-width:36px;border-radius:10px;background:linear-gradient(135deg,#9E12D4,#D6165E);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:#fff;">4</div>
+              <div style="width:36px;height:36px;min-width:36px;border-radius:10px;background:var(--g-neon);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;color:#fff;">4</div>
               <a href="blog-details.html?post=wedding-ideas" style="color:var(--t1);font-size:0.9rem;font-weight:500;line-height:1.4;">15 Wedding Neon Signs That Stole the Show</a>
             </div>
           </div>
@@ -432,9 +433,9 @@
         <!-- PASTE YOUTUBE VIDEO ID HERE: data-youtube="VIDEO_ID" -->
         <div class="blog-card h-100" style="cursor:pointer;" data-video-card data-youtube="" data-video-title="How to Install Your NeonLux Sign in 5 Minutes">
           <div style="position:relative;overflow:hidden;border-radius:20px 20px 0 0;">
-            <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=600&auto=format&fit=crop" alt="Installation video" style="width:100%;height:220px;object-fit:cover;" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop" alt="Technician demonstrating neon sign installation" style="width:100%;height:220px;object-fit:cover;" loading="lazy" />
             <div style="position:absolute;inset:0;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;">
-              <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#D6165E,#9E12D4);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#fff;box-shadow:0 0 30px rgba(255,45,120,0.6);"><i class="bi bi-play-fill" aria-hidden="true"></i></div>
+              <div style="width:60px;height:60px;border-radius:50%;background:var(--g-pink);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#fff;box-shadow:0 0 30px rgba(255,45,120,0.6);"><i class="bi bi-play-fill" aria-hidden="true"></i></div>
             </div>
             <div style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.7);color:#fff;padding:4px 10px;border-radius:8px;font-size:0.8rem;">4:32</div>
           </div>
@@ -449,9 +450,9 @@
         <!-- PASTE YOUTUBE VIDEO ID HERE: data-youtube="VIDEO_ID" -->
         <div class="blog-card h-100" style="cursor:pointer;" data-video-card data-youtube="" data-video-title="Styling a Dark Bedroom with Neon: Before & After">
           <div style="position:relative;overflow:hidden;border-radius:20px 20px 0 0;">
-            <img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=600&auto=format&fit=crop" alt="Styling video" style="width:100%;height:220px;object-fit:cover;" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?w=600&auto=format&fit=crop" alt="Styling a bedroom with glowing neon sign" style="width:100%;height:220px;object-fit:cover;" loading="lazy" />
             <div style="position:absolute;inset:0;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;">
-              <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#0077B6,#004FC4);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#fff;box-shadow:0 0 30px rgba(0,212,255,0.6);"><i class="bi bi-play-fill" aria-hidden="true"></i></div>
+              <div style="width:60px;height:60px;border-radius:50%;background:var(--g-blue);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#fff;box-shadow:0 0 30px rgba(0,212,255,0.6);"><i class="bi bi-play-fill" aria-hidden="true"></i></div>
             </div>
             <div style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.7);color:#fff;padding:4px 10px;border-radius:8px;font-size:0.8rem;">6:18</div>
           </div>
@@ -466,9 +467,9 @@
         <!-- PASTE YOUTUBE VIDEO ID HERE: data-youtube="VIDEO_ID" -->
         <div class="blog-card h-100" style="cursor:pointer;" data-video-card data-youtube="" data-video-title="Inside the NeonLux Studio: Full Production Tour">
           <div style="position:relative;overflow:hidden;border-radius:20px 20px 0 0;">
-            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&auto=format&fit=crop" alt="Studio tour video" style="width:100%;height:220px;object-fit:cover;" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&auto=format&fit=crop" alt="NeonLux artisan studio craftsmanship tour" style="width:100%;height:220px;object-fit:cover;" loading="lazy" />
             <div style="position:absolute;inset:0;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;">
-              <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#9E12D4,#D6165E);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#fff;box-shadow:0 0 30px rgba(191,0,255,0.6);"><i class="bi bi-play-fill" aria-hidden="true"></i></div>
+              <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg, #B020FF, #FF2D78);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#fff;box-shadow:0 0 30px rgba(191,0,255,0.6);"><i class="bi bi-play-fill" aria-hidden="true"></i></div>
             </div>
             <div style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.7);color:#fff;padding:4px 10px;border-radius:8px;font-size:0.8rem;">9:45</div>
           </div>
@@ -506,7 +507,7 @@
   <div class="container">
     <div class="row g-5">
       <div class="col-lg-4">
-        <span class="footer-brand"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">NeonLux</span></span>
+        <a href="index.html" class="footer-brand" aria-label="NeonLux Home"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">Neon<span>Lux</span></span></a>
         <p class="footer-desc">Premium custom neon word signs & room decor. Handcrafted with precision for bedrooms, gaming rooms, cafes, events and businesses since 2019.</p>
         <div class="social-links">
           <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>

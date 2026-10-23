@@ -104,29 +104,40 @@ function initNavbar() {
 
 // ======= THEME TOGGLE =======
 function initThemeToggle() {
-  const toggles = document.querySelectorAll('.theme-toggle');
   const root = document.documentElement;
   const saved = localStorage.getItem('neonTheme') || 'dark';
 
   root.setAttribute('data-theme', saved);
   updateThemeIcons(saved);
 
-  toggles.forEach(toggle => {
-    toggle.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme');
+  // Attach strictly to theme toggle elements (excluding any RTL toggles)
+  document.querySelectorAll('.theme-toggle-btn, .theme-toggle').forEach(toggle => {
+    if (toggle.classList.contains('rtl-toggle-btn') || toggle.classList.contains('rtl-toggle')) return;
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const current = root.getAttribute('data-theme') || 'dark';
       const next = current === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', next);
-      localStorage.setItem('neonTheme', next);
+      try { localStorage.setItem('neonTheme', next); } catch (err) {}
       updateThemeIcons(next);
     });
   });
 }
 
 function updateThemeIcons(theme) {
-  document.querySelectorAll('.theme-toggle').forEach(toggle => {
-    toggle.innerHTML = theme === 'dark'
-      ? '<i class="bi bi-sun-fill"></i>'
-      : '<i class="bi bi-moon-stars-fill"></i>';
+  const isDark = theme === 'dark';
+  const nextTheme = isDark ? 'light' : 'dark';
+  // Target ONLY theme toggle buttons, NEVER modify RTL toggle buttons
+  document.querySelectorAll('.theme-toggle-btn, .theme-toggle').forEach(toggle => {
+    if (toggle.classList.contains('rtl-toggle-btn') || toggle.classList.contains('rtl-toggle')) return;
+    toggle.setAttribute('aria-label', `Switch to ${nextTheme} theme`);
+    toggle.title = `Switch to ${nextTheme} theme`;
+    const icon = toggle.querySelector('i');
+    if (icon) {
+      icon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+    } else {
+      toggle.innerHTML = isDark ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-stars-fill"></i>';
+    }
   });
 }
 
@@ -348,64 +359,64 @@ function initVideoModal() {
 // hero image / tag / title / meta swap on the details page.
 window.NEON_POSTS = {
   'bedroom-guide': {
-    img: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1600&auto=format&fit=crop',
-    alt: 'Bedroom neon sign article hero',
+    img: 'images/bedroom-neon-sign.jpg',
+    alt: 'Master bedroom with illuminated custom cursive neon sign mounted above headboard',
     tagIcon: 'bi-lamp', tag: 'Bedroom Decor', tagColor: '',
     title: 'The Ultimate Guide to Neon Signs<br>in Your Bedroom — <span class="neon-text">2026 Edition</span>',
     date: 'October 5, 2026', read: '8 min read', views: '12,400 views'
   },
   'gaming-setups': {
-    img: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1600&auto=format&fit=crop',
-    alt: 'Gaming room neon setup',
+    img: 'images/gaming-room-neon.jpg',
+    alt: 'Illuminated GAME ON controller neon sign in gaming streamer battlestation',
     tagIcon: 'bi-controller', tag: 'Gaming', tagColor: 'var(--blue)',
     title: '10 Gaming Room Neon Setups<br>That Will Make You <span class="neon-text">Jealous</span>',
     date: 'Sep 28, 2026', read: '5 min read', views: '8,200 views'
   },
   'neon-care': {
-    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&auto=format&fit=crop',
-    alt: 'Neon sign care tips',
+    img: 'https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=1600&auto=format&fit=crop',
+    alt: 'Master craftsman inspecting and maintaining LED neon flex sign',
     tagIcon: 'bi-lightbulb', tag: 'Tips & Tricks', tagColor: 'var(--green)',
     title: 'How to Clean & Care for Your Neon Sign<br><span class="neon-text">The Complete 2026 Guide</span>',
     date: 'Sep 20, 2026', read: '4 min read', views: '6,100 views'
   },
   'cafe-footfall': {
-    img: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1600&auto=format&fit=crop',
-    alt: 'Cafe neon decor',
+    img: 'images/cafe-bar-neon.jpg',
+    alt: 'Artisanal cafe and cocktail bar interior with glowing Coffee and Cocktails neon sign',
     tagIcon: 'bi-cup-hot', tag: 'Cafe & Business', tagColor: 'var(--neon-orange)',
     title: 'How One Neon Sign Doubled a Cafe\u2019s Footfall<br><span class="neon-text">in 30 Days</span>',
     date: 'Sep 15, 2026', read: '6 min read', views: '9,700 views'
   },
   'neon-branding': {
-    img: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1600&auto=format&fit=crop',
-    alt: 'Business neon branding',
+    img: 'images/business-neon-branding.jpg',
+    alt: 'Commercial retail reception with illuminated custom neon brand logo',
     tagIcon: 'bi-building', tag: 'Business', tagColor: 'var(--purple)',
     title: 'Why Neon Branding is the Secret Weapon<br>of <span class="neon-text">Viral Businesses</span>',
     date: 'Sep 10, 2026', read: '7 min read', views: '5,400 views'
   },
   'wedding-ideas': {
-    img: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1600&auto=format&fit=crop',
-    alt: 'Wedding neon signs',
+    img: 'images/wedding-mr-mrs-neon.jpg',
+    alt: 'Romantic illuminated Mr and Mrs wedding neon sign on lush floral backdrop',
     tagIcon: 'bi-gem', tag: 'Weddings', tagColor: '#ffb6c1',
     title: '15 Wedding Neon Sign Ideas<br>That Stole the <span class="neon-text">Show</span>',
     date: 'Sep 3, 2026', read: '5 min read', views: '11,300 views'
   },
   'font-guide': {
-    img: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1600&auto=format&fit=crop',
-    alt: 'Neon sign fonts guide',
+    img: 'images/neon-fonts-guide.jpg',
+    alt: 'Close-up studio guide of custom neon fonts: cursive script, block letters, and handwriting',
     tagIcon: 'bi-type', tag: 'Design Tips', tagColor: '',
     title: 'The Ultimate Neon Font Guide<br><span class="neon-text">Which Script Wins?</span>',
     date: 'Aug 28, 2026', read: '4 min read', views: '4,800 views'
   },
   'studio-day': {
-    img: 'https://images.unsplash.com/photo-1618220179428-22790b461013?w=1600&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&auto=format&fit=crop',
     alt: 'Behind the scenes at NeonLux studio',
     tagIcon: 'bi-tools', tag: 'Behind the Scenes', tagColor: '',
     title: 'A Day in Our NeonLux Studio<br><span class="neon-text">How We Make the Magic</span>',
     date: 'Oct 1, 2026', read: '6 min read', views: '7,900 views'
   },
   'kids-rooms': {
-    img: 'https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?w=1600&auto=format&fit=crop',
-    alt: 'Kids neon room',
+    img: 'https://images.unsplash.com/photo-1576085898323-218337e3e43c?w=1600&auto=format&fit=crop',
+    alt: 'Kids magical bedroom neon room',
     tagIcon: 'bi-emoji-smile', tag: 'Kids Rooms', tagColor: 'var(--green)',
     title: 'Magical Kids Room Transformations<br><span class="neon-text">Before & After Neon</span>',
     date: 'Sep 25, 2026', read: '5 min read', views: '6,600 views'
@@ -743,24 +754,33 @@ if (heroBg) {
 
 // ======= NEON PARTICLES BACKGROUND =======
 function createParticles() {
-  const container = document.querySelector('.particles-bg');
-  if (!container) return;
+  const containers = document.querySelectorAll('.particles-bg');
+  if (!containers.length) return;
 
   const colors = ['#ff2d78', '#00d4ff', '#39ff14', '#bf00ff', '#fffc00'];
-  for (let i = 0; i < 20; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'neon-particle';
-    particle.style.cssText = `
-      left: ${Math.random() * 100}%;
-      top: ${Math.random() * 100}%;
-      background: ${colors[Math.floor(Math.random() * colors.length)]};
-      width: ${Math.random() * 4 + 2}px;
-      height: ${Math.random() * 4 + 2}px;
-      animation-delay: ${Math.random() * 6}s;
-      animation-duration: ${Math.random() * 4 + 4}s;
-    `;
-    container.appendChild(particle);
-  }
+  containers.forEach(container => {
+    // Skip if container is inside the loader or already has particles
+    if (container.closest('#pageLoader') || container.querySelector('.neon-particle')) return;
+
+    for (let i = 0; i < 24; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'neon-particle';
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const size = Math.random() * 3 + 2; // 2px to 5px
+      particle.style.cssText = `
+        left: ${Math.random() * 100}%;
+        top: ${Math.random() * 100}%;
+        background: ${color};
+        color: ${color};
+        width: ${size}px;
+        height: ${size}px;
+        box-shadow: 0 0 6px ${color}, 0 0 12px ${color};
+        animation-delay: ${Math.random() * 6}s;
+        animation-duration: ${Math.random() * 4 + 4}s;
+      `;
+      container.appendChild(particle);
+    }
+  });
 }
 createParticles();
 
@@ -805,56 +825,75 @@ document.querySelectorAll('.newsletter-form').forEach(form => {
 });
 
 // ======= RTL LAYOUT TOGGLE =======
-// Adds an RTL/LTR pill next to every theme toggle, persists choice in
-// localStorage ('neonDir') and applies it via <html dir="...">.
-// Flexbox/grid mirror automatically; physical left/right cases are
-// handled in style.css under [dir="rtl"].
+// Dedicated direction switcher completely independent from theme switching.
+// Uses dedicated bi-arrow-left-right icon, static RTL/LTR label, and persists choice in localStorage ('neonDir').
 function initRTL() {
   const root = document.documentElement;
 
-  const paint = (d) => {
-    document.querySelectorAll('.rtl-toggle').forEach((b) => {
-      b.textContent = d === 'rtl' ? 'LTR' : 'RTL';
-      const label = d === 'rtl' ? 'Switch to left-to-right layout' : 'Switch to right-to-left layout';
-      b.setAttribute('aria-label', label);
-      b.title = label;
-    });
-  };
+  const updateRTLUI = (dir) => {
+    const isRtl = dir === 'rtl';
+    root.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+    try { localStorage.setItem('neonDir', isRtl ? 'rtl' : 'ltr'); } catch (err) {}
 
-  const applyDir = (d) => {
-    root.setAttribute('dir', d === 'rtl' ? 'rtl' : 'ltr');
-    try { localStorage.setItem('neonDir', d === 'rtl' ? 'rtl' : 'ltr'); } catch (e) {}
-    paint(d === 'rtl' ? 'rtl' : 'ltr');
+    const nextText = isRtl ? 'LTR' : 'RTL';
+    const accessibleLabel = isRtl ? 'Switch to left-to-right layout' : 'Switch to right-to-left layout';
+
+    document.querySelectorAll('.rtl-toggle-btn, .rtl-toggle').forEach((btn) => {
+      btn.setAttribute('aria-label', accessibleLabel);
+      btn.title = accessibleLabel;
+      const labelSpan = btn.querySelector('.rtl-label, .rtl-text');
+      if (labelSpan) {
+        labelSpan.textContent = nextText;
+      } else {
+        const icon = btn.querySelector('i');
+        if (icon) {
+          btn.innerHTML = '';
+          btn.appendChild(icon);
+          const span = document.createElement('span');
+          span.className = 'rtl-label';
+          span.textContent = nextText;
+          btn.appendChild(span);
+        } else {
+          btn.innerHTML = `<i class="bi bi-arrow-left-right" aria-hidden="true"></i> <span class="rtl-label">${nextText}</span>`;
+        }
+      }
+    });
   };
 
   let saved = 'ltr';
-  try { saved = localStorage.getItem('neonDir') || 'ltr'; } catch (e) {}
+  try { saved = localStorage.getItem('neonDir') || 'ltr'; } catch (err) {}
   if (saved !== 'rtl') saved = 'ltr';
 
-  document.querySelectorAll('.theme-toggle').forEach((t) => {
-    if (t.nextElementSibling && t.nextElementSibling.classList.contains('rtl-toggle')) return;
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'theme-toggle rtl-toggle';
-    btn.style.width = 'auto';
-    btn.style.padding = '0 12px';
-    btn.style.borderRadius = '99px';
-    btn.style.fontSize = '0.72rem';
-    btn.style.fontWeight = '800';
-    btn.style.letterSpacing = '0.08em';
-    if (getComputedStyle(t).position === 'fixed') {
-      btn.style.position = 'fixed';
-      btn.style.top = '16px';
-      btn.style.right = '64px';
-      btn.style.zIndex = '1000';
-    }
-    t.after(btn);
-    btn.addEventListener('click', () => {
-      applyDir((root.getAttribute('dir') || 'ltr') === 'rtl' ? 'ltr' : 'rtl');
+  // Fallback for pages without pre-rendered RTL toggle buttons
+  const existingRtl = document.querySelectorAll('.rtl-toggle-btn, .rtl-toggle');
+  if (existingRtl.length === 0) {
+    document.querySelectorAll('.theme-toggle-btn, .theme-toggle').forEach((t) => {
+      if (t.classList.contains('rtl-toggle-btn') || t.classList.contains('rtl-toggle')) return;
+      if (t.nextElementSibling && (t.nextElementSibling.classList.contains('rtl-toggle-btn') || t.nextElementSibling.classList.contains('rtl-toggle'))) return;
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'rtl-toggle-btn';
+      btn.innerHTML = '<i class="bi bi-arrow-left-right" aria-hidden="true"></i> <span class="rtl-label">RTL</span>';
+      if (getComputedStyle(t).position === 'fixed') {
+        btn.style.position = 'fixed';
+        btn.style.top = '16px';
+        btn.style.right = '64px';
+        btn.style.zIndex = '1000';
+      }
+      t.after(btn);
+    });
+  }
+
+  document.querySelectorAll('.rtl-toggle-btn, .rtl-toggle').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const current = root.getAttribute('dir') || 'ltr';
+      const next = current === 'rtl' ? 'ltr' : 'rtl';
+      updateRTLUI(next);
     });
   });
 
-  applyDir(saved);
+  updateRTLUI(saved);
 }
 
 // ======= IMAGE FALLBACK (broken images never show as broken) =======

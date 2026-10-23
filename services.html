@@ -27,7 +27,8 @@
   <div class="container">
     <a class="navbar-brand" href="index.html"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">Neon<span>Lux</span></span></a>
     <div class="nav-trigger-group d-lg-none">
-      <button class="theme-toggle" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+      <button type="button" class="theme-toggle-btn" id="themeToggleMobile" aria-label="Switch to light theme" title="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+      <button type="button" class="rtl-toggle-btn" id="rtlToggleMobile" aria-label="Switch to right-to-left layout" title="Switch layout direction"><i class="bi bi-arrow-left-right" aria-hidden="true"></i> <span class="rtl-label">RTL</span></button>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -42,9 +43,9 @@
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button class="theme-toggle d-none d-lg-flex" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
-        <a href="login.html" class="btn-neon-outline btn-neon-sm"><i class="bi bi-person"></i> Login</a>
-        <a href="contact.html" class="btn-neon btn-neon-sm">Get Quote <i class="bi bi-arrow-right"></i></a>
+        <button type="button" class="theme-toggle-btn d-none d-lg-flex" id="themeToggleDesktop" aria-label="Switch to light theme" title="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+        <button type="button" class="rtl-toggle-btn d-none d-lg-inline-flex" id="rtlToggleDesktop" aria-label="Switch to right-to-left layout" title="Switch layout direction"><i class="bi bi-arrow-left-right" aria-hidden="true"></i> <span class="rtl-label">RTL</span></button>
+        <a href="contact.html" class="btn-neon btn-neon-sm">Request a Quote <i class="bi bi-arrow-right"></i></a>
       </div>
     </div>
   </div>
@@ -94,7 +95,7 @@
           </ul>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;">
             <span style="font-size:1.2rem;font-weight:800;background:var(--g-pink);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">from £79</span>
-            <a href="service-details.html" class="btn-neon btn-neon-sm">Details</a>
+            <a href="service-details.html" class="btn-secondary btn-sm">Details</a>
           </div>
         </div>
       </div>
@@ -102,7 +103,7 @@
       <!-- Service 2 -->
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
         <div class="service-card h-100" style="border-top-color:var(--blue) !important;">
-          <div class="service-card-img"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=700&auto=format&fit=crop" alt="Technician installing electrical fittings on a wall" loading="lazy" /></div>
+          <div class="service-card-img"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=700&auto=format&fit=crop" alt="Certified technician safely installing and testing custom neon sign" loading="lazy" /></div>
           <h5 style="font-weight:700;margin-bottom:12px;">Professional Installation</h5>
           <p style="color:var(--t2);font-size:0.9rem;margin-bottom:20px;line-height:1.7;">Our certified technicians install your neon sign perfectly — no drilling stress, no guesswork. Available nationwide.</p>
           <ul class="feature-list mb-4" style="font-size:0.85rem;">
@@ -113,7 +114,7 @@
           </ul>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;">
             <span style="font-size:1.2rem;font-weight:800;background:var(--g-blue);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">from £49</span>
-            <a href="service-details.html" class="btn-neon btn-neon-sm" style="background:linear-gradient(135deg,#0077B6,#004FC4);box-shadow:0 0 20px rgba(0,212,255,0.4);">Details</a>
+            <a href="service-details.html" class="btn-secondary btn-sm">Details</a>
           </div>
         </div>
       </div>
@@ -131,8 +132,8 @@
             <li><i class="bi bi-check-circle-fill"></i> Commercial grade</li>
           </ul>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;">
-            <span style="font-size:1.2rem;font-weight:800;background:linear-gradient(135deg,#9E12D4,#D6165E);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">from £199</span>
-            <a href="service-details.html" class="btn-neon btn-neon-sm" style="background:linear-gradient(135deg,#9E12D4,#D6165E);box-shadow:0 0 20px rgba(191,0,255,0.4);">Details</a>
+            <span style="font-size:1.2rem;font-weight:800;background:var(--g-pink);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">from £199</span>
+            <a href="service-details.html" class="btn-secondary btn-sm">Details</a>
           </div>
         </div>
       </div>
@@ -140,7 +141,7 @@
       <!-- Service 4 -->
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
         <div class="service-card h-100">
-          <div class="service-card-img"><img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=700&auto=format&fit=crop" alt="Outdoor wedding ceremony aisle decorated with flowers" loading="lazy" /></div>
+          <div class="service-card-img"><img src="images/wedding-mr-mrs-neon.jpg" alt="Custom wedding neon sign glowing on romantic floral arch backdrop" loading="lazy" /></div>
           <h5 style="font-weight:700;margin-bottom:12px;">Wedding Neon Signs</h5>
           <p style="color:var(--t2);font-size:0.9rem;margin-bottom:20px;line-height:1.7;">Create unforgettable wedding moments with bespoke neon backdrops, vow signs and couple name illuminations.</p>
           <ul class="feature-list mb-4" style="font-size:0.85rem;">
@@ -151,7 +152,7 @@
           </ul>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;">
             <span style="font-size:1.2rem;font-weight:800;background:var(--g-pink);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">from £169</span>
-            <a href="service-details.html" class="btn-neon btn-neon-sm">Details</a>
+            <a href="service-details.html" class="btn-secondary btn-sm">Details</a>
           </div>
         </div>
       </div>
@@ -159,7 +160,7 @@
       <!-- Service 5 -->
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
         <div class="service-card h-100">
-          <div class="service-card-img"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=700&auto=format&fit=crop" alt="Crowd celebrating with confetti and stage lights at a live event" loading="lazy" /></div>
+          <div class="service-card-img"><img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=700&auto=format&fit=crop" alt="Illuminated neon sign display at an exclusive celebration event" loading="lazy" /></div>
           <h5 style="font-weight:700;margin-bottom:12px;">Event Neon Hire</h5>
           <p style="color:var(--t2);font-size:0.9rem;margin-bottom:20px;line-height:1.7;">Rent premium neon signs for your event. Birthdays, corporate events, product launches — available for hire nationwide.</p>
           <ul class="feature-list mb-4" style="font-size:0.85rem;">
@@ -169,8 +170,8 @@
             <li><i class="bi bi-check-circle-fill"></i> Custom text options</li>
           </ul>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;">
-            <span style="font-size:1.2rem;font-weight:800;background:linear-gradient(135deg,#0A7A38,#0077B6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">from £89/day</span>
-            <a href="service-details.html" class="btn-neon btn-neon-sm btn-dark-text" style="background:linear-gradient(135deg,#39ff14,#00d4ff);box-shadow:0 0 20px rgba(57,255,20,0.4);color:#000;">Details</a>
+            <span style="font-size:1.2rem;font-weight:800;background:var(--g-blue);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">from £89/day</span>
+            <a href="service-details.html" class="btn-secondary btn-sm">Details</a>
           </div>
         </div>
       </div>
@@ -188,8 +189,8 @@
             <li><i class="bi bi-check-circle-fill"></i> Bulk order discounts</li>
           </ul>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;">
-            <span style="font-size:1.2rem;font-weight:800;background:linear-gradient(135deg,#ff6b00,#fffc00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Custom Quote</span>
-            <a href="contact.html" class="btn-neon btn-neon-sm btn-dark-text" style="background:linear-gradient(135deg,#ff6b00,#fffc00);box-shadow:0 0 20px rgba(255,107,0,0.4);color:#000;">Quote</a>
+            <span style="font-size:1.2rem;font-weight:800;background:var(--g-pink);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Custom Quote</span>
+            <a href="contact.html" class="btn-primary btn-sm">Quote</a>
           </div>
         </div>
       </div>
@@ -213,8 +214,8 @@
     </div>
     <div class="row g-4">
       <div class="col-sm-6 col-lg-3" data-filter="small" data-aos="fade-up" data-aos-delay="0">
-        <div class="neon-card" data-lightbox="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=1200">
-          <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=500&auto=format&fit=crop" alt="Small neon sign" style="height:240px;" loading="lazy" />
+        <div class="neon-card" data-lightbox="images/love-pink-neon.jpg">
+          <img src="images/love-pink-neon.jpg" alt="Small pink LOVE custom neon sign (30cm)" style="height:240px;object-fit:cover;" loading="lazy" />
           <div class="neon-card-badge">Small</div>
           <div class="neon-card-overlay">
             <div class="neon-card-title">LOVE</div>
@@ -226,9 +227,9 @@
         </div>
       </div>
       <div class="col-sm-6 col-lg-3" data-filter="medium" data-aos="fade-up" data-aos-delay="100">
-        <div class="neon-card" data-lightbox="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1200">
-          <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=500&auto=format&fit=crop" alt="Medium neon sign" style="height:240px;" loading="lazy" />
-          <div class="neon-card-badge" style="background:linear-gradient(135deg,#0077B6,#004FC4);">Medium</div>
+        <div class="neon-card" data-lightbox="images/dream-big-blue-neon.jpg">
+          <img src="images/dream-big-blue-neon.jpg" alt="Medium blue DREAM BIG custom neon sign (70cm)" style="height:240px;object-fit:cover;" loading="lazy" />
+          <div class="neon-card-badge" style="background:var(--g-blue);">Medium</div>
           <div class="neon-card-overlay">
             <div class="neon-card-title">DREAM BIG</div>
             <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -239,9 +240,9 @@
         </div>
       </div>
       <div class="col-sm-6 col-lg-3" data-filter="large" data-aos="fade-up" data-aos-delay="200">
-        <div class="neon-card" data-lightbox="https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=1200">
-          <img src="https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=500&auto=format&fit=crop" alt="Large neon sign" style="height:240px;" loading="lazy" />
-          <div class="neon-card-badge" style="background:linear-gradient(135deg,#9E12D4,#D6165E);">Large</div>
+        <div class="neon-card" data-lightbox="images/wedding-mr-mrs-neon.jpg">
+          <img src="images/wedding-mr-mrs-neon.jpg" alt="Large white MR & MRS wedding neon sign (120cm)" style="height:240px;object-fit:cover;" loading="lazy" />
+          <div class="neon-card-badge" style="background:var(--g-pink);">Large</div>
           <div class="neon-card-overlay">
             <div class="neon-card-title">MR & MRS</div>
             <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -252,9 +253,9 @@
         </div>
       </div>
       <div class="col-sm-6 col-lg-3" data-filter="medium" data-aos="fade-up" data-aos-delay="300">
-        <div class="neon-card" data-lightbox="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1200">
-          <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=500&auto=format&fit=crop" alt="Medium neon sign" style="height:240px;" loading="lazy" />
-          <div class="neon-card-badge" style="background:linear-gradient(135deg,#9E12D4,#D6165E);">Medium</div>
+        <div class="neon-card" data-lightbox="images/good-vibes-purple-neon.jpg">
+          <img src="images/good-vibes-purple-neon.jpg" alt="Medium purple GOOD VIBES custom neon sign (80cm)" style="height:240px;object-fit:cover;" loading="lazy" />
+          <div class="neon-card-badge" style="background:linear-gradient(135deg, #B020FF, #FF2D78);">Medium</div>
           <div class="neon-card-overlay">
             <div class="neon-card-title">GOOD VIBES</div>
             <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -308,7 +309,7 @@
         </div>
       </div>
       <div class="col-lg-6" data-aos="fade-left">
-        <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&auto=format&fit=crop" alt="Neon customization" style="width:100%;height:480px;object-fit:cover;border-radius:24px;" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=800&auto=format&fit=crop" alt="Precision handcrafted LED neon flex sign detail and craftsmanship" style="width:100%;height:480px;object-fit:cover;border-radius:24px;" loading="lazy" />
       </div>
     </div>
   </div>
@@ -409,7 +410,7 @@
   <div class="container">
     <div class="row g-5">
       <div class="col-lg-4">
-        <span class="footer-brand"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">NeonLux</span></span>
+        <a href="index.html" class="footer-brand" aria-label="NeonLux Home"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="logo-text">Neon<span>Lux</span></span></a>
         <p class="footer-desc">Premium custom neon word signs & room decor. Handcrafted with precision for bedrooms, gaming rooms, cafes, events and businesses since 2019.</p>
         <div class="social-links">
           <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
